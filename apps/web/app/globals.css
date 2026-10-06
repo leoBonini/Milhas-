@@ -96,6 +96,20 @@ h2 { font-size: 1.05rem; margin: 28px 0 10px; }
   background: var(--superficie); border: 1px solid var(--borda); border-radius: 14px; overflow: hidden;
 }
 
+.barra-categorias {
+  display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  margin: 4px -16px 12px; padding: 4px 16px 8px;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--fundo);
+}
+.barra-categorias::-webkit-scrollbar { display: none; }
+.aba {
+  flex: none; padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; font-weight: 500;
+  border: 1px solid var(--borda); background: var(--superficie); color: var(--texto-2); white-space: nowrap;
+}
+.aba:hover { border-color: var(--destaque); }
+.aba[aria-current="page"] { background: var(--destaque); border-color: var(--destaque); color: #fff; }
+.aba:focus-visible, .chip:focus-visible, .linha-loja:focus-visible { outline: 2px solid var(--destaque); outline-offset: 2px; }
+
 .categorias { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
   display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 999px;

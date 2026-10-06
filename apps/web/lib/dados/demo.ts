@@ -104,6 +104,9 @@ export const fonteDemo: FonteDados = {
   async palavrasChave(): Promise<PalavraChave[]> {
     return TERMOS.map((termo) => ({ termo, categoria_id: "eletronicos" }));
   },
+  async lojasDeHoje() {
+    return this.lojasDaCategoria("eletronicos");
+  },
   async lojasDaCategoria(categoriaId): Promise<LojaDoDia[]> {
     if (categoriaId !== "eletronicos") return [];
     const s = series();

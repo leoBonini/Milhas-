@@ -19,6 +19,19 @@ export function CampoBusca({ valor = "" }: { valor?: string }) {
   );
 }
 
+/** Barra de categorias no topo, rolável no celular. A ativa fica destacada. */
+export function BarraCategorias({ categorias, ativa }: { categorias: Categoria[]; ativa?: string }) {
+  return (
+    <nav className="barra-categorias" aria-label="Categorias">
+      {categorias.map((c) => (
+        <Link key={c.id} href={`/categoria/${c.id}`} className="aba" aria-current={c.id === ativa ? "page" : undefined}>
+          {c.nome}
+        </Link>
+      ))}
+    </nav>
+  );
+}
+
 export function BotoesCategoria({ categorias }: { categorias: Categoria[] }) {
   return (
     <nav className="categorias" aria-label="Categorias">

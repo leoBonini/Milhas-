@@ -1,6 +1,5 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
-import type { LojaDoDia, Parceiro, PontoDiario, ProgramaId } from "@milhas/core";
-import { hojeBrasilia, somarDias } from "../datas";
+import { PROGRAMAS, type LojaDoDia, type Parceiro, type PontoDiario, type ProgramaId } from "@milhas/core";
 import type { FonteDados, HistoricoLoja } from "./tipos";
 
 interface LinhaDiaria {
@@ -25,10 +24,53 @@ async function todasAsLinhas<T>(consulta: (de: number, ate: number) => PromiseLi
 export function criarFonteSupabase(url: string, chaveAnon: string): FonteDados {
   const db: SupabaseClient = createClient(url, chaveAnon, { auth: { persistSession: false } });
 
+  /**
+   * "Parceiro hoje" = aparece na coleta mais recente do programa. Se uma loja sai da
+   * Livelo, ela some da coleta seguinte e deixa de ser mostrada para aquele programa.
+   */
+  async function lojasDeHoje(): Promise<LojaDoDia[]> {
+    const porParceiro = new Map<string, { livelo: number | null; esfera: number | null; data: string | null }>();
+    for (const { id: programa } of PROGRAMAS) {
+      const { data: ultima, error } = await db
+        .from("pontuacao_diaria")
+        .select("data")
+        .eq("programa_id", programa)
+        .order("data", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (error) throw error;
+      if (!ultima) continue;
+      const linhas = await todasAsLinhas<LinhaDiaria>((de, ate) =>
+        db
+          .from("pontuacao_diaria")
+          .select("parceiro_id, programa_id, data, pontos_por_real")
+          .eq("programa_id", programa)
+          .eq("data", ultima.data)
+          .range(de, ate),
+      );
+      for (const l of linhas) {
+        const atual = porParceiro.get(l.parceiro_id) ?? { livelo: null, esfera: null, data: null };
+        atual[programa] = Number(l.pontos_por_real);
+        if (!atual.data || l.data > atual.data) atual.data = l.data;
+        porParceiro.set(l.parceiro_id, atual);
+      }
+    }
+    if (!porParceiro.size) return [];
+
+    const ids = [...porParceiro.keys()];
+    const parceiros: Parceiro[] = [];
+    for (let i = 0; i < ids.length; i += 200) {
+      const { data, error } = await db.from("parceiros").select("id, nome, slug").in("id", ids.slice(i, i + 200)).eq("ativo", true);
+      if (error) throw error;
+      parceiros.push(...data);
+    }
+    return parceiros.map((p) => ({ parceiro: p, ...porParceiro.get(p.id)! }));
+  }
+
   return {
     demonstracao: false,
     async categorias() {
-      const { data, error } = await db.from("categorias").select("id, nome").order("nome");
+      const { data, error } = await db.from("categorias").select("id, nome").order("ordem").order("nome");
       if (error) throw error;
       return data;
     },
@@ -42,41 +84,12 @@ export function criarFonteSupabase(url: string, chaveAnon: string): FonteDados {
       if (error) throw error;
       return data;
     },
-    async lojasDaCategoria(categoriaId): Promise<LojaDoDia[]> {
-      const { data: vinculos, error } = await db
-        .from("parceiro_categoria")
-        .select("parceiros!inner(id, nome, slug, ativo)")
-        .eq("categoria_id", categoriaId)
-        .eq("parceiros.ativo", true);
+    lojasDeHoje,
+    async lojasDaCategoria(categoriaId) {
+      const { data, error } = await db.from("parceiro_categoria").select("parceiro_id").eq("categoria_id", categoriaId);
       if (error) throw error;
-      const parceiros = (vinculos as unknown as { parceiros: Parceiro }[]).map((v) => v.parceiros);
-      if (!parceiros.length) return [];
-
-      // Últimos dias: se a coleta de hoje ainda não rodou, mostra o valor mais recente
-      const hoje = hojeBrasilia();
-      const linhas = await todasAsLinhas<LinhaDiaria>((de, ate) =>
-        db
-          .from("pontuacao_diaria")
-          .select("parceiro_id, programa_id, data, pontos_por_real")
-          .in("parceiro_id", parceiros.map((p) => p.id))
-          .gte("data", somarDias(hoje, -3))
-          .lte("data", hoje)
-          .order("data", { ascending: false })
-          .range(de, ate),
-      );
-
-      return parceiros.map((p) => {
-        const doParceiro = linhas.filter((l) => l.parceiro_id === p.id);
-        const recente = (programa: ProgramaId) => doParceiro.find((l) => l.programa_id === programa);
-        const livelo = recente("livelo");
-        const esfera = recente("esfera");
-        return {
-          parceiro: { id: p.id, nome: p.nome, slug: p.slug },
-          livelo: livelo ? Number(livelo.pontos_por_real) : null,
-          esfera: esfera ? Number(esfera.pontos_por_real) : null,
-          data: [livelo?.data, esfera?.data].filter(Boolean).sort().at(-1) ?? null,
-        };
-      });
+      const daCategoria = new Set(data.map((v) => v.parceiro_id as string));
+      return (await lojasDeHoje()).filter((l) => daCategoria.has(l.parceiro.id));
     },
     async historico(slug): Promise<HistoricoLoja | null> {
       const { data: p, error } = await db.from("parceiros").select("id, nome, slug").eq("slug", slug).maybeSingle();
