@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-06T13:42:17.884Z",
+ "coletadoEm": "2026-10-06T13:45:48.774Z",
  "data": "2026-10-06",
  "totais": {
   "livelo": 249,
@@ -27,7 +27,7 @@
    "slug": "abelha-rainha",
    "nome": "Abelha Rainha",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -59,7 +59,7 @@
    "slug": "adcos",
    "nome": "ADCOS",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 6,
@@ -176,7 +176,7 @@
    "slug": "allianz",
    "nome": "Allianz",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 4,
@@ -232,7 +232,7 @@
    "slug": "angeloni",
    "nome": "Angeloni",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 4,
@@ -264,7 +264,7 @@
    "slug": "aramis",
    "nome": "Aramis",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -338,7 +338,6 @@
    "slug": "assist-card-seguro-viagem",
    "nome": "Assist Card Seguro-Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -389,7 +388,7 @@
    "slug": "avis",
    "nome": "Avis",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -462,7 +461,7 @@
    "slug": "bagaggio",
    "nome": "Bagaggio",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -478,7 +477,7 @@
    "slug": "baianao",
    "nome": "Baianão",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -542,7 +541,7 @@
    "slug": "beep",
    "nome": "Beep",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 6,
@@ -581,7 +580,7 @@
    "slug": "beto-carrero-world",
    "nome": "Beto Carrero World",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -597,7 +596,7 @@
    "slug": "beyoung",
    "nome": "Beyoung",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -613,7 +612,7 @@
    "slug": "bibi",
    "nome": "Bibi",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -646,7 +645,7 @@
    "slug": "bo-bo",
    "nome": "BO.BÔ",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -662,7 +661,7 @@
    "slug": "bobstore",
    "nome": "Bobstore",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -678,7 +677,7 @@
    "slug": "bombay-herbs-e-spices",
    "nome": "Bombay Herbs & Spices",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -807,7 +806,7 @@
    "slug": "buddha-spa",
    "nome": "Buddha Spa",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -823,7 +822,7 @@
    "slug": "budget",
    "nome": "Budget",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -880,7 +879,7 @@
    "slug": "cabana-magazine",
    "nome": "Cabana Magazine",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -1053,7 +1052,7 @@
    "slug": "carters",
    "nome": "Carters",
    "categorias": [
-    "outros"
+    "infantil"
    ],
    "livelo": {
     "pontosPorReal": 6,
@@ -1200,7 +1199,6 @@
    "slug": "ciclic-seguro-celular",
    "nome": "Ciclic Seguro Celular",
    "categorias": [
-    "eletronicos",
     "servicos"
    ],
    "livelo": {
@@ -1217,7 +1215,6 @@
    "slug": "ciclic-seguro-viagem",
    "nome": "Ciclic Seguro Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -1234,7 +1231,7 @@
    "slug": "civitatis",
    "nome": "Civitatis",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -1347,7 +1344,7 @@
    "slug": "colcci",
    "nome": "Colcci",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -1461,7 +1458,7 @@
    "slug": "converse",
    "nome": "Converse",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -1494,7 +1491,7 @@
    "slug": "coris",
    "nome": "Coris",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 15,
@@ -1510,7 +1507,7 @@
    "slug": "creditas",
    "nome": "Creditas",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -1526,7 +1523,7 @@
    "slug": "crocs",
    "nome": "Crocs",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 7,
@@ -1665,7 +1662,7 @@
    "slug": "democrata",
    "nome": "Democrata",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -1697,7 +1694,7 @@
    "slug": "divvino",
    "nome": "Divvino",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -1848,7 +1845,7 @@
    "slug": "dudalina",
    "nome": "Dudalina",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -1931,7 +1928,7 @@
    "slug": "easy-live",
    "nome": "Easy Live",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -1947,7 +1944,7 @@
    "slug": "edp",
    "nome": "EDP",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 6,
@@ -2022,7 +2019,7 @@
    "slug": "ellus",
    "nome": "Ellus",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2094,7 +2091,7 @@
    "slug": "estapar",
    "nome": "Estapar",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -2199,7 +2196,7 @@
    "slug": "faber-castell",
    "nome": "Faber-Castell",
    "categorias": [
-    "outros"
+    "infantil"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2379,7 +2376,7 @@
    "slug": "forever-liss",
    "nome": "Forever Liss",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2395,7 +2392,7 @@
    "slug": "fossil",
    "nome": "Fóssil",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2478,7 +2475,7 @@
    "slug": "giuliana-flores",
    "nome": "Giuliana Flores",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -2575,7 +2572,7 @@
    "slug": "grupo-dreams",
    "nome": "Grupo Dreams",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 4,
@@ -2591,7 +2588,7 @@
    "slug": "guess",
    "nome": "Guess",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2607,7 +2604,7 @@
    "slug": "guldi",
    "nome": "Guldi",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -2623,7 +2620,7 @@
    "slug": "havaianas",
    "nome": "Havaianas",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2639,7 +2636,7 @@
    "slug": "hering",
    "nome": "Hering",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -2671,7 +2668,6 @@
    "slug": "hero-seguro-celular",
    "nome": "Hero Seguro Celular",
    "categorias": [
-    "eletronicos",
     "servicos"
    ],
    "livelo": {
@@ -2688,7 +2684,6 @@
    "slug": "hero-seguro-viagem",
    "nome": "HERO SEGURO VIAGEM",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -2705,7 +2700,7 @@
    "slug": "hertz-internacional",
    "nome": "Hertz Internacional",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 10,
@@ -2753,7 +2748,7 @@
    "slug": "hope",
    "nome": "Hope",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -2801,7 +2796,7 @@
    "slug": "hot-beach",
    "nome": "Hot Beach",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -2913,7 +2908,7 @@
    "slug": "individual",
    "nome": "Individual",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -2946,7 +2941,7 @@
    "slug": "insider-store",
    "nome": "Insider Store",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 4,
@@ -2993,22 +2988,6 @@
    }
   },
   {
-   "slug": "ir-para-regras-do-parceiro",
-   "nome": "Ir para regras do parceiro",
-   "categorias": [
-    "outros"
-   ],
-   "livelo": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/pontofrio/PTF",
-    "regra": "1 pts a cada 1 real(is)"
-   },
-   "esfera": null
-  },
-  {
    "slug": "jbl",
    "nome": "JBL",
    "categorias": [
@@ -3045,7 +3024,7 @@
    "slug": "john-john",
    "nome": "John John",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -3149,7 +3128,6 @@
    "slug": "klubi-consorcio-celular",
    "nome": "Klubi Consórcio Celular",
    "categorias": [
-    "eletronicos",
     "servicos"
    ],
    "livelo": {
@@ -3198,7 +3176,6 @@
    "slug": "klubi-consorcio-viagem",
    "nome": "Klubi Consórcio Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -3273,7 +3250,7 @@
    "slug": "le-lis",
    "nome": "LE LIS",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -3366,7 +3343,6 @@
    "slug": "liga-vitoria-seguro-de-viagem",
    "nome": "Liga Vitória - Seguro de Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -3503,7 +3479,7 @@
    "slug": "liz",
    "nome": "Liz",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -3535,7 +3511,7 @@
    "slug": "localiza-internacional",
    "nome": "Localiza Internacional",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -3575,7 +3551,7 @@
    "slug": "loccitane",
    "nome": "Loccitane",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -3630,7 +3606,7 @@
    "slug": "loja-do-mecanico",
    "nome": "Loja do Mecânico",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -3666,7 +3642,7 @@
    "slug": "lojas-torra",
    "nome": "Lojas Torra",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 8,
@@ -3682,7 +3658,7 @@
    "slug": "loungerie",
    "nome": "Loungerie",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -3714,7 +3690,7 @@
    "slug": "luxury-loyalty",
    "nome": "Luxury Loyalty",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -3838,7 +3814,7 @@
    "slug": "maltacor",
    "nome": "Maltacor",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -3854,7 +3830,7 @@
    "slug": "malwee",
    "nome": "Malwee",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -3910,7 +3886,7 @@
    "slug": "maxracer",
    "nome": "MaxRacer",
    "categorias": [
-    "outros"
+    "esporte"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -3926,7 +3902,7 @@
    "slug": "medsenior",
    "nome": "MedSênior",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 7,
@@ -3942,7 +3918,7 @@
    "slug": "meia-sola",
    "nome": "Meia Sola",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -4057,7 +4033,7 @@
    "slug": "mobifacil",
    "nome": "Mobifácil",
    "categorias": [
-    "outros"
+    "eletronicos"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -4073,7 +4049,7 @@
    "slug": "mobills",
    "nome": "Mobills",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 10,
@@ -4105,7 +4081,7 @@
    "slug": "mondaine",
    "nome": "Mondaine",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 8,
@@ -4144,7 +4120,7 @@
    "slug": "morana",
    "nome": "Morana",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -4252,7 +4228,7 @@
    "slug": "nars",
    "nome": "Nars",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -4364,7 +4340,6 @@
    "slug": "next-seguro-viagem",
    "nome": "Next Seguro Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -4462,7 +4437,7 @@
    "slug": "oceane",
    "nome": "Oceane",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -4534,7 +4509,7 @@
    "slug": "osklen",
    "nome": "Osklen",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 6,
@@ -4550,7 +4525,7 @@
    "slug": "ourocap",
    "nome": "OuroCap",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 10,
@@ -4566,7 +4541,7 @@
    "slug": "oxford",
    "nome": "Oxford",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -4582,7 +4557,7 @@
    "slug": "pado",
    "nome": "Pado",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -4633,7 +4608,7 @@
    "slug": "perfectdraft-ambev",
    "nome": "PerfectDraft (Ambev)",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -4740,7 +4715,7 @@
    "slug": "piatan-natural",
    "nome": "Piatan Natural",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -4835,10 +4810,27 @@
    }
   },
   {
+   "slug": "pontofrio",
+   "nome": "Pontofrio",
+   "categorias": [
+    "eletronicos",
+    "casa"
+   ],
+   "livelo": {
+    "pontosPorReal": 1,
+    "pontosBase": 1,
+    "escopo": "loja toda",
+    "promocao": false,
+    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/pontofrio/PTF",
+    "regra": "1 pts a cada 1 real(is)"
+   },
+   "esfera": null
+  },
+  {
    "slug": "portal-das-malas",
    "nome": "Portal das Malas",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -4854,7 +4846,7 @@
    "slug": "portallar",
    "nome": "Portallar",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -4886,7 +4878,7 @@
    "slug": "porto-servico",
    "nome": "Porto Serviço",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 8,
@@ -5075,7 +5067,7 @@
    "slug": "quem-disse-berenice",
    "nome": "Quem Disse, Berenice?",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -5107,7 +5099,7 @@
    "slug": "quero-quero",
    "nome": "Quero-Quero",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5232,7 +5224,7 @@
    "slug": "richards",
    "nome": "Richards",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5248,7 +5240,7 @@
    "slug": "salinas",
    "nome": "Salinas",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5297,7 +5289,7 @@
    "slug": "samsonite",
    "nome": "Samsonite",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5331,7 +5323,8 @@
    "slug": "santander-shopping",
    "nome": "Santander Shopping",
    "categorias": [
-    "outros"
+    "eletronicos",
+    "casa"
    ],
    "livelo": null,
    "esfera": {
@@ -5363,7 +5356,6 @@
    "slug": "scudoo-seguro-celular",
    "nome": "Scudoo Seguro Celular",
    "categorias": [
-    "eletronicos",
     "servicos"
    ],
    "livelo": {
@@ -5380,7 +5372,7 @@
    "slug": "seculus",
    "nome": "Seculus",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -5412,7 +5404,6 @@
    "slug": "seguro-viagem-bradesco",
    "nome": "Seguro Viagem Bradesco",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -5429,7 +5420,7 @@
    "slug": "sephora",
    "nome": "Sephora",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5445,7 +5436,7 @@
    "slug": "seus-ingressos",
    "nome": "Seus Ingressos",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -5477,7 +5468,7 @@
    "slug": "shiseido",
    "nome": "Shiseido",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -5568,7 +5559,7 @@
    "slug": "sixt",
    "nome": "Sixt",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5617,7 +5608,7 @@
    "slug": "speedo",
    "nome": "Speedo",
    "categorias": [
-    "outros"
+    "esporte"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5633,7 +5624,7 @@
    "slug": "spicy",
    "nome": "Spicy",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -5666,7 +5657,7 @@
    "slug": "studio-z",
    "nome": "Studio Z",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5682,7 +5673,7 @@
    "slug": "suhai-seguradora",
    "nome": "Suhai Seguradora",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5714,7 +5705,6 @@
    "slug": "sulamerica-seguro-viagem",
    "nome": "SulAmérica Seguro Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -5731,7 +5721,7 @@
    "slug": "summerville",
    "nome": "Summerville",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -5747,7 +5737,7 @@
    "slug": "supernosso",
    "nome": "Supernosso",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 0.33,
@@ -5779,7 +5769,7 @@
    "slug": "telhanorte",
    "nome": "Telhanorte",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5830,7 +5820,7 @@
    "slug": "thule",
    "nome": "Thule",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -5846,7 +5836,7 @@
    "slug": "tia-sonia",
    "nome": "Tia Sônia",
    "categorias": [
-    "outros"
+    "mercado"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -5894,7 +5884,7 @@
    "slug": "top-moveis",
    "nome": "Top Móveis",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5910,7 +5900,7 @@
    "slug": "travelex",
    "nome": "Travelex",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5926,7 +5916,7 @@
    "slug": "tripchip",
    "nome": "TripChip",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 5,
@@ -5942,7 +5932,7 @@
    "slug": "trocafy",
    "nome": "Trocafy",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 1,
@@ -5958,7 +5948,7 @@
    "slug": "truss",
    "nome": "Truss",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -6062,7 +6052,6 @@
    "slug": "universal-assistance-seguro-viagem",
    "nome": "Universal Assistance – Seguro Viagem",
    "categorias": [
-    "viagem",
     "servicos"
    ],
    "livelo": {
@@ -6096,7 +6085,7 @@
    "slug": "viajar",
    "nome": "Viajar",
    "categorias": [
-    "outros"
+    "viagem"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -6135,7 +6124,7 @@
    "slug": "vr-collezioni",
    "nome": "VR Collezioni",
    "categorias": [
-    "outros"
+    "moda"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -6151,7 +6140,7 @@
    "slug": "vult",
    "nome": "Vult",
    "categorias": [
-    "outros"
+    "beleza"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -6202,7 +6191,7 @@
    "slug": "wise-up",
    "nome": "Wise UP",
    "categorias": [
-    "outros"
+    "servicos"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -6328,7 +6317,7 @@
    "slug": "zissou",
    "nome": "Zissou",
    "categorias": [
-    "outros"
+    "casa"
    ],
    "livelo": {
     "pontosPorReal": 3,
@@ -6347,6 +6336,8 @@
    "destino": "Aeroméxico Rewards",
    "paridade": "3.5:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/aeromexico-rewards/e000100738"
   },
@@ -6355,6 +6346,8 @@
    "destino": "ALL Accor",
    "paridade": "3.5:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/all-accor/e000100158"
   },
@@ -6363,6 +6356,8 @@
    "destino": "Azul Fidelidade",
    "paridade": "1:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/azul-fidelidade/e000100002"
   },
@@ -6371,6 +6366,8 @@
    "destino": "Copa ConnectMiles",
    "paridade": "3:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/copa-airlines/e000100695"
   },
@@ -6379,6 +6376,8 @@
    "destino": "Flying Blue",
    "paridade": "3.5:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/flying-blue/e000100730"
   },
@@ -6387,6 +6386,8 @@
    "destino": "Iberia Plus",
    "paridade": "2:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/iberia-plus/e000100072"
   },
@@ -6395,6 +6396,8 @@
    "destino": "IHG One Rewards",
    "paridade": "2:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/ihg-one-rewards/e000100736"
   },
@@ -6403,6 +6406,8 @@
    "destino": "LATAM Pass",
    "paridade": "1:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/latam-pass/e000100101"
   },
@@ -6411,6 +6416,8 @@
    "destino": "Smiles",
    "paridade": "1:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/smiles/e000100001"
   },
@@ -6419,6 +6426,8 @@
    "destino": "TAP Miles&Go",
    "paridade": "2.7:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/tap-miles-and-go/e000100732"
   },
@@ -6427,6 +6436,8 @@
    "destino": "Turkish Miles&Smiles",
    "paridade": "4.5:1",
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.esfera.com.vc/p/turkish-miles-and-go/e000200000"
   },
@@ -6435,6 +6446,8 @@
    "destino": "LATAM Pass",
    "paridade": null,
    "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
    "campanha": null,
    "url": "https://www.livelo.com.br/livelo-para-parceiros/latam/MTPTransfer"
   },
@@ -6442,8 +6455,10 @@
    "programa": "livelo",
    "destino": "Smiles",
    "paridade": null,
-   "bonusPercentual": 70,
-   "campanha": "Válido das 10h do dia 28/09 às 23h59 do dia 30/09/26. 40% bônus para todos os clientes. 70% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. Bônus limitado a 300 mil milhas. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
+   "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
+   "campanha": null,
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
@@ -6451,7 +6466,9 @@
    "destino": "Azul Fidelidade",
    "paridade": null,
    "bonusPercentual": 100,
-   "campanha": "Válida das 09h do dia 05/10 às 23h59 de 07/10/26. 40% de bônus para não assinantes do Clube Azul;. 70% de bônus para clientes Clube Azul;. 75% de bônus para clientes Clube Azul com mais de 6 meses e menos de 11 meses de assinatura;. 80% de bônus para clientes Clube Azul com 12 a 35 meses de assinatura;. 90% de bônus para clientes Clube Azul com 36 a 59 meses de assinatura;. 100% de bônus para clie",
+   "bonusMinimo": 40,
+   "validaAte": "2026-10-07",
+   "campanha": "Válida das 09h do dia 05/10 às 23h59 de 07/10/26. 40% de bônus para não assinantes do Clube Azul;. 70% de bônus para clientes Clube Azul;. 75% de bônus para clientes Clube Azul com mais de 6 meses e menos de 11 meses de assinatura;. 80% de bônus para clientes Clube Azul com 12 a 35 meses de assinatura;. 90% de bônus para clientes Clube Azul com 36 a 59 meses de assinatura;. 100% de bônus para clientes Clube Azul com mais de 60 meses de assinatura. Bônus limitado a 300. 000 pontos por CPF . Limit",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/azul/AZLTransfer"
   }
  ]
