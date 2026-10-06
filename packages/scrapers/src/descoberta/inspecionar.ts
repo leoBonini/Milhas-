@@ -56,6 +56,21 @@ async function esfera() {
   }
 }
 
+async function liveloTransferencias() {
+  for (const caminho of ["latam/MTPTransfer", "smiles/SMLTransfer", "azul/AZLTransfer"]) {
+    await new Promise((r) => setTimeout(r, 2500));
+    const r = await fetch(`https://www.livelo.com.br/livelo-para-parceiros/${caminho}`, { headers: { "user-agent": UA, accept: "text/html" } });
+    const html = await r.text();
+    console.log(`\n=== ${r.status} transferência ${caminho} (${html.length} bytes)`);
+    const texto = html.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+    for (const m of texto.matchAll(/.{0,160}(b[oô]nus|paridade|%|milhas? a cada|pontos =).{0,160}/gi)) console.log("  texto:", m[0]);
+    const next = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1] ?? "";
+    for (const m of next.matchAll(/.{0,200}(parity|bonus|Bonus|percent|conversion|ratio).{0,200}/g)) console.log("  json:", m[0]);
+    const apis = [...new Set(html.match(/https?:\/\/apis?\.[a-z0-9.-]+\/[^"'\s<>)]*/gi) ?? [])];
+    console.log("  APIs no HTML:", apis.slice(0, 20).join(" "));
+  }
+}
+
 async function esferaTransferencias() {
   const cab = { siteid: "esfera", origin: "https://www.esfera.com.vc", referer: "https://www.esfera.com.vc/" };
   const j = await buscar("https://apigw.esfera.com.vc/bff-miles/ehis/parity/factor-wi?skus=saer,dazl,dacr,dcop,sair,dibp,sihg,dlta,dsml,stap,stks", cab);
@@ -134,6 +149,14 @@ async function livelo() {
     const ex = html.match(new RegExp(`.{0,150}${termo}.{0,150}`, "i"))?.[0]?.replace(/\s+/g, " ");
     console.log(`\n[termo ${termo}] ${ocorr}x :: ${ex}`);
   }
+  // Estrutura de um cartão de parceiro e de onde vêm as categorias
+  const cartao = html.match(/<a data-testid="a_PartnerCard_card_link"[\s\S]*?<\/a>/)?.[0];
+  console.log("\n[cartão completo]", cartao?.slice(0, 3000));
+  const testids = new Map<string, number>();
+  for (const m of html.matchAll(/data-testid="([^"]+)"/g)) testids.set(m[1]!, (testids.get(m[1]!) ?? 0) + 1);
+  console.log("\n[data-testid]", [...testids].sort((a, b) => b[1] - a[1]).slice(0, 60).map(([k, v]) => `${k}:${v}`).join(" "));
+  const ctxCat = [...html.matchAll(/.{0,120}[Cc]ategori.{0,120}/g)].map((m) => m[0].replace(/<[^>]+>/g, " ").replace(/\s+/g, " "));
+  console.log("\n[categorias, contextos distintos]\n" + [...new Set(ctxCat)].slice(0, 25).join("\n"));
   const linksTransf = [...new Set(html.match(/https?:\/\/[^"'\s<>]*transf[^"'\s<>]*/gi) ?? [])];
   console.log("\nLinks com 'transf':", linksTransf.slice(0, 20).join("\n"));
 
@@ -154,5 +177,6 @@ async function livelo() {
 
 const alvo = process.env.INSPECIONAR || "todos";
 if (alvo === "esfera" || alvo === "todos") await esfera();
-if (alvo === "transferencias" || alvo === "todos") await esferaTransferencias();
-if (alvo === "livelo" || alvo === "todos" || alvo === "transferencias") await livelo();
+if (alvo === "esfera-transferencias") await esferaTransferencias();
+if (alvo === "livelo" || alvo === "todos") await livelo();
+if (alvo === "transferencias" || alvo === "todos") await liveloTransferencias();
