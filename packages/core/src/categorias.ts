@@ -14,6 +14,7 @@ export const CATEGORIAS_APP = [
   { id: "infantil", nome: "Infantil" },
   { id: "livros", nome: "Livros" },
   { id: "servicos", nome: "Serviços" },
+  { id: "outros", nome: "Outros" },
 ] as const;
 
 export type CategoriaAppId = (typeof CATEGORIAS_APP)[number]["id"];
@@ -73,4 +74,114 @@ export function categoriasDoParceiro(idsExternos: string[], dicionario: Record<s
     for (const [regex, categoria] of PISTAS) if (regex.test(id)) resultado.add(categoria);
   }
   return [...resultado];
+}
+
+/** Mesma normalização do coletor: "Fast Shop" -> "fastshop". */
+export function chaveNome(nome: string): string {
+  return nome
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/&/g, "e")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+/**
+ * O que cada loja vende (não diz se é parceira: isso vem só da coleta do dia).
+ * Usado quando o programa não informa a categoria da loja.
+ */
+const LOJAS_CONHECIDAS: Record<string, CategoriaAppId[]> = {
+  magalu: ["eletronicos", "casa"],
+  fastshop: ["eletronicos", "casa"],
+  casasbahia: ["eletronicos", "casa"],
+  pontofrio: ["eletronicos", "casa"],
+  ponto: ["eletronicos", "casa"],
+  extra: ["eletronicos", "casa"],
+  kabum: ["eletronicos"],
+  samsung: ["eletronicos"],
+  motorola: ["eletronicos"],
+  dell: ["eletronicos"],
+  lenovo: ["eletronicos"],
+  lg: ["eletronicos"],
+  iplace: ["eletronicos"],
+  jbl: ["eletronicos"],
+  positivo: ["eletronicos"],
+  philco: ["eletronicos", "casa"],
+  britania: ["eletronicos", "casa"],
+  panasonic: ["eletronicos"],
+  acer: ["eletronicos"],
+  midea: ["eletronicos", "casa"],
+  electrolux: ["eletronicos", "casa"],
+  brastemp: ["eletronicos", "casa"],
+  consul: ["eletronicos", "casa"],
+  gazin: ["eletronicos", "casa"],
+  lojascolombo: ["eletronicos", "casa"],
+  efacil: ["eletronicos", "casa"],
+  frigelar: ["eletronicos", "casa"],
+  dufrio: ["eletronicos", "casa"],
+  centralar: ["eletronicos", "casa"],
+  cookeletroraro: ["eletronicos", "casa"],
+  nespresso: ["casa", "mercado"],
+  dolcegusto: ["casa", "mercado"],
+  mercadolivre: ["eletronicos", "casa", "moda"],
+  shopee: ["eletronicos", "casa", "moda"],
+  aliexpress: ["eletronicos", "casa", "moda"],
+  temu: ["eletronicos", "casa", "moda"],
+  shein: ["moda"],
+  amazon: ["eletronicos", "casa", "livros"],
+  americanas: ["eletronicos", "casa"],
+  carrefour: ["mercado", "eletronicos", "casa"],
+  carrefourshopping: ["eletronicos", "casa"],
+  samsclub: ["mercado"],
+  samsclubecommerce: ["mercado", "eletronicos"],
+  leroymerlin: ["casa"],
+  booking: ["viagem"],
+  bookingcom: ["viagem"],
+  hoteis: ["viagem"],
+  hoteiscom: ["viagem"],
+  decolar: ["viagem"],
+  latamairlines: ["viagem"],
+  gol: ["viagem"],
+  azul: ["viagem"],
+  qatarairways: ["viagem"],
+  avianca: ["viagem"],
+  buser: ["viagem"],
+  clickbus: ["viagem"],
+  flixbus: ["viagem"],
+  localiza: ["viagem"],
+  movida: ["viagem"],
+  unidas: ["viagem"],
+  rentcars: ["viagem"],
+  disney: ["servicos"],
+  disneyplus: ["servicos"],
+  netshoes: ["esporte", "moda"],
+  centauro: ["esporte", "moda"],
+  decathlon: ["esporte"],
+  petz: ["pet"],
+  cobasi: ["pet"],
+  petlove: ["pet"],
+};
+
+const PISTAS_NOME: [RegExp, CategoriaAppId][] = [
+  [/eletro|tech|tecno|informat|celular|games|\bar\b|refrigera/i, "eletronicos"],
+  [/moda|cal[cç]ad|roupa|outlet|jeans|lingerie|underwear|shoes|sapat/i, "moda"],
+  [/beleza|perfum|cosmet|beauty|make|botic/i, "beleza"],
+  [/viag|turism|cruzeir|hotel|hoteis|passage|airline|aere|resort|park|seguro.?viagem|aluguel|rent|car\b|bus\b/i, "viagem"],
+  [/casa|decor|move(l|is)|cozinh|colch|cama|constru|home/i, "casa"],
+  [/pet|zoo|dog|cat\b/i, "pet"],
+  [/sport|esport|fitness|academ|suplement|nutri|bike|run/i, "esporte"],
+  [/mercado|aliment|bebida|vinho|wine|caf[eé]|coffee|gourmet|chocolat|cestas|delivery/i, "mercado"],
+  [/sa[uú]de|farm[aá]c|drogar|[oó]tic|oculos|lente|odonto|medic|vacina/i, "saude"],
+  [/brinqued|infantil|beb[eê]|kids|crian/i, "infantil"],
+  [/livr|book(?!ing)/i, "livros"],
+  [/seguro|cons[oó]rcio|capitaliza|curso|educa|streaming|assinatura|telefon|claro|tim\b|energia|cr[eé]dito|banco|cart[aã]o/i, "servicos"],
+];
+
+/** Categorias pelo nome da loja: dicionário de lojas conhecidas e, depois, palavras do nome. */
+export function categoriasPorNome(nome: string): CategoriaAppId[] {
+  const conhecida = LOJAS_CONHECIDAS[chaveNome(nome)];
+  if (conhecida) return conhecida;
+  const achadas = new Set<CategoriaAppId>();
+  for (const [regex, cat] of PISTAS_NOME) if (regex.test(nome)) achadas.add(cat);
+  return [...achadas];
 }

@@ -75,3 +75,13 @@ test("normalização e busca por palavra-chave", () => {
   assert.equal(encontrarCategoria("tvzinha", palavras), null);
   assert.equal(encontrarCategoria("geladeira", palavras), null);
 });
+
+import { categoriasPorNome } from "./categorias";
+
+test("categorias pelo nome da loja", () => {
+  assert.deepEqual(categoriasPorNome("Fast Shop"), ["eletronicos", "casa"]);
+  assert.deepEqual(categoriasPorNome("Drogaria São Paulo"), ["saude"]);
+  assert.deepEqual(categoriasPorNome("Booking.com"), ["viagem"]);
+  assert.deepEqual(categoriasPorNome("Bradesco Consórcios"), ["servicos"]);
+  assert.deepEqual(categoriasPorNome("Xyzabc"), []);
+});

@@ -1,0 +1,47 @@
+# Fase 1: coleta das pontuações de Livelo e Esfera, 3 vezes ao dia.
+# Grava dados/coleta/hoje.json e dados/coleta/historico.json no repositório;
+# o app é republicado a cada atualização. Se a coleta falhar ou vier vazia,
+# o job fica vermelho (e o GitHub avisa por e-mail).
+name: Coleta diária
+
+on:
+  schedule:
+    # 8h, 13h e 19h no horário de Brasília (UTC-3)
+    - cron: "0 11 * * *"
+    - cron: "0 16 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coleta
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Coletar
+        env:
+          COLETA_USER_AGENT: ${{ vars.COLETA_USER_AGENT }}
+        run: npm run coletar -w @milhas/scrapers
+      # Salva o que foi coletado mesmo se uma parte falhou (o job continua vermelho)
+      - name: Salvar dados
+        if: always()
+        run: |
+          git config user.name "coleta-bot"
+          git config user.email "coleta-bot@users.noreply.github.com"
+          git add dados/coleta
+          if git diff --cached --quiet; then echo "Sem mudanças"; exit 0; fi
+          git commit -m "Coleta $(TZ=America/Sao_Paulo date '+%Y-%m-%d %H:%M')"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

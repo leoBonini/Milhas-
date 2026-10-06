@@ -5,6 +5,7 @@
   "scripts": {
     "descobrir": "tsx src/descoberta/descobrir.ts",
     "inspecionar": "tsx src/descoberta/inspecionar.ts",
+    "coletar": "tsx src/coleta/executar.ts",
     "test": "tsx --test src/**/*.test.ts",
     "typecheck": "tsc --noEmit"
   },

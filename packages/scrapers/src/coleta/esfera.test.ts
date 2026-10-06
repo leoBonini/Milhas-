@@ -12,7 +12,7 @@ const magalu = {
   esf_accumulationPrefix: "Até",
   esf_tempOfferInit: "dd-mm-yyyy HH:MM",
   esf_tempOfferEnd: "dd-mm-yyyy HH:MM",
-  skuForShowcase: { categoryIds: ["esf02163", "newEletroTecnologia"] },
+  skuForShowcase: { categoryIds: ["esf02163", "newCasaDecoracao"] },
 };
 
 test("Magalu: 1 ponto por real, até", () => {
@@ -20,7 +20,7 @@ test("Magalu: 1 ponto por real, até", () => {
   assert.equal(p.pontosPorReal, 1);
   assert.equal(p.escopo, "até (varia por produto ou cliente)");
   assert.equal(p.url, "https://www.esfera.com.vc/p/magalu/e000100100");
-  assert.deepEqual(p.categorias, ["eletronicos"]);
+  assert.deepEqual(p.categorias, ["casa"]);
 });
 
 test("Azul: 1 ponto a cada 4 reais = 0,25", () => {
