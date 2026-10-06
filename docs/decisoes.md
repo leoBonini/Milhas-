@@ -34,3 +34,25 @@ ou por bot, o relatório mostrará status 403 e a alternativa é rodar localment
 
 **User agent identificável.** Configurável por `COLETA_USER_AGENT` (variável do repositório
 no Actions). Intervalo padrão de 3 s entre páginas, ou o `Crawl-delay` do robots.txt se for maior.
+
+## 2026-10-06 — App (Fase 3 adiantada)
+
+**Fonte de dados plugável.** `apps/web/lib/dados` define uma interface única. Com as
+variáveis do Supabase, lê do banco; sem elas, usa dados de demonstração determinísticos,
+sempre com aviso na tela. Permite usar e publicar o app antes de a coleta existir.
+
+**Valor "de hoje".** Se a coleta do dia ainda não rodou, mostra o valor mais recente dos
+últimos 3 dias e informa a data na tela de categoria.
+
+**Melhor mês por programa.** O cálculo roda separado para Livelo e Esfera (as promoções são
+independentes), com o texto do template: "o melhor mês da Magalu na Livelo é…".
+
+**Percentil 75** com interpolação linear sobre os picos mensais da loja (no programa).
+
+**Gráfico em degraus (`stepAfter`).** A pontuação vale o dia inteiro e muda em saltos; a
+linha em degrau mostra isso sem sugerir valores intermediários. Cores das séries:
+slots 1 (azul) e 2 (laranja) da paleta categórica validada, com versões para tema escuro.
+
+**PWA.** Manifest e ícones gerados pelo Next (sem binários no repo) e service worker com
+cache de arquivos estáticos e rede-primeiro para páginas. O mesmo service worker receberá o
+Web Push na Fase 4.

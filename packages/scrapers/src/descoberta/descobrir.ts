@@ -22,8 +22,8 @@ import { encontrarListasCandidatas, REGEX_TEXTO_PONTOS, type ListaCandidata } fr
 
 interface ConfigPrograma {
   id: "livelo" | "esfera";
-  /** Só o domínio principal é presumido. As páginas de parceiros são achadas pelos links. */
-  inicio: string;
+  /** Páginas iniciais. Além delas, os links de parceiros encontrados são seguidos. */
+  inicio: string[];
   /** Textos de link que levam às páginas de parceiros/pontuação */
   palavrasLink: RegExp;
 }
@@ -31,12 +31,13 @@ interface ConfigPrograma {
 const PROGRAMAS: ConfigPrograma[] = [
   {
     id: "livelo",
-    inicio: "https://www.livelo.com.br/",
+    // Página de parceiros informada pelo usuário em 2026-10-06
+    inicio: ["https://www.livelo.com.br/juntar-pontos/todos-os-parceiros", "https://www.livelo.com.br/"],
     palavrasLink: /parceir|compre e pontue|ganhe pontos|ganhar pontos|shopping|lojas/i,
   },
   {
     id: "esfera",
-    inicio: "https://www.esfera.com.vc/",
+    inicio: ["https://www.esfera.com.vc/"],
     palavrasLink: /parceir|acumul|compre e pontue|ganhe pontos|lojas|shopping/i,
   },
 ];
@@ -147,7 +148,7 @@ async function descobrir(programa: ConfigPrograma, urlsExtras: string[], comTela
   await mkdir(path.join(pasta, "corpos"), { recursive: true });
   await mkdir(path.join(pasta, "paginas"), { recursive: true });
 
-  const origem = new URL(urlsExtras[0] ?? programa.inicio).origin;
+  const origem = new URL(urlsExtras[0] ?? programa.inicio[0]!).origin;
   const robots = await lerRobots(origem);
   const intervalo = Math.max(INTERVALO_MS, (robots?.intervaloSegundos ?? 0) * 1000);
   const permitido = (url: string) => {
@@ -248,7 +249,7 @@ async function descobrir(programa: ConfigPrograma, urlsExtras: string[], comTela
   };
 
   // 1) Página inicial (ou as URLs passadas na linha de comando)
-  const iniciais = urlsExtras.length ? urlsExtras : [programa.inicio];
+  const iniciais = urlsExtras.length ? urlsExtras : programa.inicio;
   for (const url of iniciais) await visitar(url);
 
   // 2) Links do próprio domínio cujo texto indica parceiros/pontuação (a partir da última página aberta)

@@ -1,0 +1,166 @@
+/* Tokens de cor: claro por padrão, escuro pelo sistema ou por data-theme */
+:root {
+  color-scheme: light;
+  --fundo: #f6f6f4;
+  --superficie: #fcfcfb;
+  --borda: #e4e3de;
+  --texto: #0b0b0b;
+  --texto-2: #52514e;
+  --texto-3: #7a7974;
+  --destaque: #1f5fae;
+  --destaque-fundo: #e8f0fb;
+  --aviso-fundo: #fff4d6;
+  --aviso-texto: #6b4a00;
+  --serie-livelo: #2a78d6;
+  --serie-esfera: #eb6834;
+  --grade: #ecebe7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --fundo: #121211;
+    --superficie: #1a1a19;
+    --borda: #2e2e2c;
+    --texto: #ffffff;
+    --texto-2: #c3c2b7;
+    --texto-3: #8f8e86;
+    --destaque: #6ea8f0;
+    --destaque-fundo: #1d2a3b;
+    --aviso-fundo: #3a2f12;
+    --aviso-texto: #f3d58a;
+    --serie-livelo: #3987e5;
+    --serie-esfera: #d95926;
+    --grade: #262624;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fundo: #121211;
+  --superficie: #1a1a19;
+  --borda: #2e2e2c;
+  --texto: #ffffff;
+  --texto-2: #c3c2b7;
+  --texto-3: #8f8e86;
+  --destaque: #6ea8f0;
+  --destaque-fundo: #1d2a3b;
+  --aviso-fundo: #3a2f12;
+  --aviso-texto: #f3d58a;
+  --serie-livelo: #3987e5;
+  --serie-esfera: #d95926;
+  --grade: #262624;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+
+.container { max-width: 640px; margin: 0 auto; padding: 0 16px 48px; }
+
+.topo {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0 8px;
+}
+.marca { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+.marca span { color: var(--destaque); }
+
+.aviso {
+  background: var(--aviso-fundo); color: var(--aviso-texto);
+  border-radius: 10px; padding: 10px 12px; font-size: 0.85rem; margin: 8px 0 16px;
+}
+
+h1 { font-size: 1.5rem; margin: 16px 0 4px; letter-spacing: -0.02em; }
+h2 { font-size: 1.05rem; margin: 28px 0 10px; }
+.sub { color: var(--texto-2); margin: 0 0 12px; font-size: 0.92rem; }
+
+.busca { display: flex; gap: 8px; margin: 12px 0 4px; }
+.busca input {
+  flex: 1; min-width: 0; padding: 12px 14px; border-radius: 12px;
+  border: 1px solid var(--borda); background: var(--superficie); color: var(--texto); font-size: 1rem;
+}
+.busca input:focus { outline: 2px solid var(--destaque); outline-offset: -1px; }
+.busca button {
+  padding: 0 16px; border-radius: 12px; border: 0;
+  background: var(--destaque); color: #fff; font-weight: 600; cursor: pointer;
+}
+
+.cartao {
+  background: var(--superficie); border: 1px solid var(--borda); border-radius: 14px; overflow: hidden;
+}
+
+.categorias { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 999px;
+  background: var(--superficie); border: 1px solid var(--borda); font-weight: 500;
+}
+.chip:hover { border-color: var(--destaque); }
+
+.destaques { list-style: none; margin: 0; padding: 0; }
+.destaques li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--borda); }
+.destaques li:first-child { border-top: 0; }
+.posicao { width: 22px; color: var(--texto-3); font-variant-numeric: tabular-nums; font-size: 0.9rem; }
+.destaques .nome { flex: 1; font-weight: 600; }
+
+.programa {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--texto-2);
+}
+.programa::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--cor-programa);
+}
+.programa.livelo { --cor-programa: var(--serie-livelo); }
+.programa.esfera { --cor-programa: var(--serie-esfera); }
+
+.valor { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.1rem; text-align: right; }
+.valor small { font-weight: 400; color: var(--texto-3); font-size: 0.72rem; margin-left: 2px; }
+.valor.vazio { color: var(--texto-3); font-weight: 400; font-size: 0.9rem; }
+
+/* Lista da categoria */
+.cabecalho-lista, .linha-loja {
+  display: grid; grid-template-columns: 1fr 76px 76px; align-items: center; gap: 8px; padding: 0 14px;
+}
+.cabecalho-lista { padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--borda); font-size: 0.8rem; }
+.cabecalho-lista > :not(:first-child) { justify-self: end; }
+.loja + .loja { border-top: 1px solid var(--borda); }
+.linha-loja {
+  width: 100%; min-height: 56px; background: none; border: 0; text-align: left; cursor: pointer;
+}
+.linha-loja:hover { background: var(--destaque-fundo); }
+.linha-loja .nome { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.seta { color: var(--texto-3); transition: transform 0.15s; font-size: 0.8rem; }
+.aberta .seta { transform: rotate(90deg); }
+.melhor { color: var(--destaque); }
+
+.detalhe { padding: 4px 14px 18px; }
+.filtros { display: flex; gap: 6px; margin: 4px 0 12px; }
+.filtros button {
+  padding: 6px 12px; border-radius: 999px; border: 1px solid var(--borda);
+  background: var(--superficie); cursor: pointer; font-size: 0.85rem;
+}
+.filtros button[aria-pressed="true"] { background: var(--texto); color: var(--superficie); border-color: var(--texto); }
+.legenda { display: flex; gap: 16px; font-size: 0.85rem; color: var(--texto-2); margin-bottom: 4px; }
+.legenda b { color: var(--texto); font-variant-numeric: tabular-nums; }
+.grafico { height: 220px; margin: 0 -6px; }
+.sugestao {
+  margin-top: 12px; padding: 12px; border-radius: 10px; background: var(--destaque-fundo); font-size: 0.9rem;
+}
+.sugestao p { margin: 0; }
+.sugestao p + p { margin-top: 6px; }
+.dica { color: var(--texto-3); font-size: 0.8rem; margin-top: 10px; }
+.carregando { color: var(--texto-3); padding: 24px 0; text-align: center; font-size: 0.9rem; }
+
+.tooltip {
+  background: var(--superficie); border: 1px solid var(--borda); border-radius: 8px;
+  padding: 8px 10px; font-size: 0.8rem; box-shadow: 0 4px 14px rgb(0 0 0 / 0.12);
+}
+.tooltip .data { color: var(--texto-2); margin-bottom: 4px; }
+.tooltip div { display: flex; justify-content: space-between; gap: 12px; }
+
+.rodape { color: var(--texto-3); font-size: 0.75rem; margin-top: 32px; text-align: center; }

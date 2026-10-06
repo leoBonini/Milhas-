@@ -29,7 +29,7 @@ e agrupa pelo seletor CSS.
 
 | Item | Valor |
 |---|---|
-| Página de parceiros | _pendente_ |
+| Página de parceiros | https://www.livelo.com.br/juntar-pontos/todos-os-parceiros (informada pelo usuário; endpoints por trás dela ainda a descobrir) |
 | robots.txt | _pendente_ |
 | Tipo de fonte | _pendente_ (JSON ou HTML) |
 
