@@ -34,9 +34,13 @@ export default async function Inicio() {
           {!top.length && <li>Nenhuma pontuação coletada hoje ainda.</li>}
         </ol>
       </div>
-      <p className="dica">
-        <Link href="/busca" className="melhor">Buscar um produto</Link>
-      </p>
+      <Link href="/transferencias" className="atalho">
+        <span>
+          Transferir para milhas
+          <small>Bônus de hoje para LATAM Pass, Smiles e Azul</small>
+        </span>
+        <span aria-hidden>›</span>
+      </Link>
     </main>
   );
 }

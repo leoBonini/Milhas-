@@ -25,7 +25,7 @@ const js = r.outputFiles[0].text.replace(/<\/script/gi, "<\\/script");
 const css = await readFile(path.join(web, "app", "globals.css"), "utf8");
 
 const html = `<title>Pontos por Real</title>
-<meta name="description" content="Demonstração do app: pontos por real das lojas parceiras Livelo e Esfera.">
+<meta name="description" content="Pontos por real das lojas parceiras Livelo e Esfera hoje, e bônus de transferência para milhas.">
 <style>
 ${css}
 </style>

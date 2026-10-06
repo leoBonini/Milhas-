@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { melhorValor, type LojaDoDia } from "@milhas/core";
-import { Valor } from "./Comuns";
+import { formatarPontos } from "@milhas/core";
+import { NomePrograma, Valor } from "./Comuns";
 import { GraficoLoja, type CarregarHistorico } from "./GraficoLoja";
 
 export function ListaLojas({
@@ -46,10 +47,42 @@ export function ListaLojas({
               <Valor pontos={l.livelo} destaque={l.livelo != null && l.livelo === melhor} />
               <Valor pontos={l.esfera} destaque={l.esfera != null && l.esfera === melhor} />
             </button>
-            {estaAberta && <GraficoLoja slug={l.parceiro.slug} carregar={carregarHistorico} />}
+            {estaAberta && (
+              <>
+                <Ofertas loja={l} />
+                <GraficoLoja slug={l.parceiro.slug} carregar={carregarHistorico} />
+              </>
+            )}
           </div>
         );
       })}
+    </div>
+  );
+}
+
+/** Regra de cada programa e link para comprar pela loja via Livelo/Esfera (é o link que garante os pontos). */
+function Ofertas({ loja }: { loja: LojaDoDia }) {
+  const lista = (["livelo", "esfera"] as const).flatMap((p) => (loja.ofertas?.[p] ? [{ programa: p, o: loja.ofertas[p]! }] : []));
+  if (!lista.length) return null;
+  return (
+    <div className="detalhe ofertas">
+      {lista.map(({ programa, o }) => (
+        <div key={programa} className="oferta">
+          <span>
+            <NomePrograma programa={programa} /> <b>{formatarPontos(o.pontosPorReal)} pts/R$</b>
+            {o.promocao && <span className="selo">promoção</span>}
+          </span>
+          <span className="regra">
+            {o.regra}
+            {o.escopo !== "loja toda" ? ` · ${o.escopo}` : ""}
+          </span>
+          {o.url && (
+            <a href={o.url} target="_blank" rel="noopener noreferrer">
+              Ir pela {programa === "livelo" ? "Livelo" : "Esfera"}
+            </a>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

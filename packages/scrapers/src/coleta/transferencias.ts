@@ -8,6 +8,10 @@ export interface TransferenciaColetada {
   paridade: string | null;
   /** Maior bônus anunciado hoje, em %. 0 = sem campanha. Ex: 35 = 100 mil viram 135 mil. */
   bonusPercentual: number;
+  /** Menor bônus da campanha (o que vale para todos os clientes), quando há faixas */
+  bonusMinimo: number;
+  /** Fim da campanha (AAAA-MM-DD), quando informado */
+  validaAte: string | null;
   /** Texto da campanha (resumido), validade e regras principais */
   campanha: string | null;
   url: string;
@@ -54,6 +58,8 @@ export function normalizarTransferenciasEsfera(linhas: ParidadeEsfera[]): Transf
       destino: destino?.nome ?? id,
       paridade: formatarRazao(padrao.points, padrao.miles),
       bonusPercentual: bonus,
+      bonusMinimo: bonus,
+      validaAte: null,
       campanha: bonus > 0 ? `Campanha ${melhor.campaignId ?? ""}`.trim() : null,
       url: destino ? `https://www.esfera.com.vc${destino.rota}` : "https://www.esfera.com.vc",
     });
@@ -82,21 +88,42 @@ function acharCampanha(obj: unknown, profundidade = 0): Record<string, unknown> 
   return null;
 }
 
+/**
+ * Última data citada no texto ("das 10h do dia 28/09 às 23h59 do dia 30/09/26") = fim da campanha.
+ * Datas sem ano herdam o ano de outra data do texto ou o ano de referência.
+ */
+export function fimDaCampanha(texto: string, referencia: Date): string | null {
+  const datas = [...texto.matchAll(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/g)];
+  if (!datas.length) return null;
+  const anoTexto = datas.map((d) => d[3]).find(Boolean);
+  const ultima = datas.at(-1)!;
+  let ano = Number(ultima[3] ?? anoTexto ?? referencia.getFullYear());
+  if (ano < 100) ano += 2000;
+  return `${ano}-${ultima[2]!.padStart(2, "0")}-${ultima[1]!.padStart(2, "0")}`;
+}
+
+const hojeBrasilia = (d: Date) => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Sao_Paulo" }).format(d);
+
 /** Lê a campanha da página de transferência da Livelo (dados embutidos __NEXT_DATA__). */
-export function lerTransferenciaLivelo(html: string, destino: string, url: string): TransferenciaColetada {
+export function lerTransferenciaLivelo(html: string, destino: string, url: string, agora = new Date()): TransferenciaColetada {
   const json = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1];
   if (!json) throw new Error(`transferência ${destino}: página sem dados embutidos (o site mudou?)`);
   const campanha = acharCampanha(JSON.parse(json));
   const textoBonus = String(campanha?.bonus ?? "");
   const descricao = semHtml(String(campanha?.longDescription ?? ""));
-  const percentuais = [...`${textoBonus} ${descricao}`.matchAll(/(\d{1,3})\s*%/g)].map((m) => Number(m[1]));
-  const bonus = percentuais.length ? Math.max(...percentuais) : 0;
+  const percentuais = [...`${textoBonus} ${descricao}`.matchAll(/(\d{1,3})\s*%/g)].map((m) => Number(m[1])).filter((n) => n > 0 && n <= 300);
+  const validaAte = fimDaCampanha(descricao, agora);
+  // Campanha que já terminou continua na página às vezes: não conta
+  const vencida = !!validaAte && validaAte < hojeBrasilia(agora);
+  const ativa = percentuais.length > 0 && !vencida;
   return {
     programa: "livelo",
     destino,
     paridade: null,
-    bonusPercentual: bonus,
-    campanha: bonus > 0 ? (descricao || semHtml(textoBonus)).slice(0, 400) : null,
+    bonusPercentual: ativa ? Math.max(...percentuais) : 0,
+    bonusMinimo: ativa ? Math.min(...percentuais) : 0,
+    validaAte: ativa ? validaAte : null,
+    campanha: ativa ? (descricao || semHtml(textoBonus)).slice(0, 500) : null,
     url,
   };
 }

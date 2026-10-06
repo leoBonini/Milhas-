@@ -23,11 +23,23 @@ export interface PontoDiario {
   pontos: number;
 }
 
+/** Detalhe da oferta de um programa para uma loja hoje. */
+export interface OfertaDoDia {
+  pontosPorReal: number;
+  pontosBase: number | null;
+  escopo: string;
+  promocao: boolean;
+  url: string | null;
+  regra: string;
+}
+
 /** Linha da lista de lojas: pontuação de hoje em cada programa. */
 export interface LojaDoDia {
   parceiro: Parceiro;
   livelo: number | null;
   esfera: number | null;
+  /** Detalhes (link para a loja pelo programa, regra, promoção), quando disponíveis */
+  ofertas?: Partial<Record<ProgramaId, OfertaDoDia>>;
   /** Data do valor mostrado (pode ser anterior a hoje se a coleta do dia ainda não rodou) */
   data: string | null;
 }
