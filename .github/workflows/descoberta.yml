@@ -1,0 +1,48 @@
+# Fase 0: roda o script de descoberta das fontes num runner do GitHub
+# (que tem acesso livre à internet) e publica o relatório.
+# Disparo manual: Actions > "Descoberta de fontes" > Run workflow.
+name: Descoberta de fontes
+
+on:
+  workflow_dispatch:
+    inputs:
+      programa:
+        description: "livelo, esfera ou todos"
+        default: todos
+        required: true
+      url:
+        description: "Opcional: URL inicial específica (exige escolher um programa)"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  descobrir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+        working-directory: packages/scrapers
+      - name: Descobrir
+        env:
+          COLETA_USER_AGENT: ${{ vars.COLETA_USER_AGENT }}
+          PROGRAMA: ${{ inputs.programa }}
+          URL_INICIAL: ${{ inputs.url }}
+        run: |
+          args=(--programa "$PROGRAMA")
+          if [ -n "$URL_INICIAL" ]; then args+=(--url "$URL_INICIAL"); fi
+          npm run descobrir -w @milhas/scrapers -- "${args[@]}"
+      # Sobe o resultado mesmo se a descoberta falhar, para ver o que o site devolveu
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: descoberta-${{ github.run_id }}
+          path: saida/descoberta
+          retention-days: 30

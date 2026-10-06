@@ -1,0 +1,7 @@
+node_modules/
+.env
+.env.local
+.next/
+dist/
+# saída da descoberta (HAR, corpos JSON, screenshots) — fica só no artefato do Actions
+saida/

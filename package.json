@@ -1,0 +1,17 @@
+{
+  "name": "milhas",
+  "private": true,
+  "description": "App de pontos por real dos parceiros Livelo e Esfera",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "descobrir": "npm run descobrir -w @milhas/scrapers",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
