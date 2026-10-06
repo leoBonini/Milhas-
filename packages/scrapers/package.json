@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@milhas/core": "*",
     "playwright": "1.56.1"
   },
   "devDependencies": {

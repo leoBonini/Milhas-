@@ -2,6 +2,8 @@
 // todos os campos simples de alguns itens, para identificar onde está a pontuação.
 // Uso: npm run inspecionar -w @milhas/scrapers
 
+import { encontrarListasCandidatas } from "./analise.js";
+
 const UA = process.env.COLETA_USER_AGENT || "MilhasBot/0.1 (+https://github.com/leoBonini/Milhas-)";
 
 function achatar(obj: unknown, prefixo = "", saida: Record<string, unknown> = {}, profundidade = 0) {
@@ -79,7 +81,26 @@ async function livelo() {
   console.log(`\n=== ${r.status} página de parceiros (${html.length} bytes)`);
   const apis = [...new Set(html.match(/https?:\/\/[a-z0-9.-]*(?:livelo|pontoslivelo)[a-z0-9.-]*\/[^"'\s<>)]*/gi) ?? [])];
   console.log("URLs no HTML:", apis.slice(0, 60).join("\n"));
-  for (const m of html.matchAll(/<script[^>]*(?:__NEXT_DATA__|application\/json)[^>]*>([\s\S]{0,200})/g)) console.log("script JSON:", m[1]);
+  const dadosNext = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1];
+  if (dadosNext) {
+    const json = JSON.parse(dadosNext) as unknown;
+    const candidatas = encontrarListasCandidatas(json).slice(0, 5);
+    for (const c of candidatas) {
+      console.log(`\n--- lista ${c.caminho} (${c.quantidade} itens, pontuação ${c.pontuacao}) chaves: ${c.chaves.join(", ").slice(0, 800)}`);
+      console.log(JSON.stringify(c.exemplos[0]).slice(0, 2500));
+    }
+    const melhor = candidatas.find((c) => c.chaves.some((k) => /partnerCode|code/i.test(k)) && c.quantidade > 100) ?? candidatas[0];
+    if (melhor) {
+      console.log(`\n--- LISTA COMPLETA ${melhor.caminho}`);
+      const nomeK = melhor.chaves.find((k) => /^(name|nome|title|partnerName|displayName)$/i.test(k)) ?? "name";
+      const codK = melhor.chaves.find((k) => /partnerCode|^code$/i.test(k)) ?? "id";
+      const catK = melhor.chaves.filter((k) => /categor/i.test(k));
+      for (const i of melhor.itens) {
+        const v = (k: string) => JSON.stringify(k.split(".").reduce<unknown>((o, p) => (o as Record<string, unknown>)?.[p], i))?.slice(0, 200);
+        console.log([v(codK), v(nomeK), ...catK.map(v)].join(" | "));
+      }
+    }
+  }
   const codigo = html.match(/partnerCode[^,]{0,80}/g);
   console.log("partnerCode no HTML:", codigo?.slice(0, 5));
 
