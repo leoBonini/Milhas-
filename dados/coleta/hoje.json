@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-06T13:48:42.227Z",
+ "coletadoEm": "2026-10-06T20:48:28.645Z",
  "data": "2026-10-06",
  "totais": {
   "livelo": 249,
@@ -5548,9 +5548,9 @@
    },
    "esfera": {
     "pontosPorReal": 1,
-    "pontosBase": 1,
+    "pontosBase": 0.5,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "url": "https://www.esfera.com.vc/p/shopee/e000100697",
     "regra": "Até 1 pontos a cada real"
    }
