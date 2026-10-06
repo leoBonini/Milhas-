@@ -62,7 +62,7 @@ export default function Transferencias() {
               {outras.map((t) => (
                 <li key={`${t.programa}-${t.destino}`}>
                   <span className="nome">{t.destino}</span>
-                  <span className="sub" style={{ margin: 0 }}>{t.paridade} pts:milha</span>
+                  <span className="sub" style={{ margin: 0 }}>{t.paridade} pontos:milha</span>
                   <span className={`bonus${t.bonusPercentual > 0 ? " ativo" : ""}`}>{t.bonusPercentual > 0 ? `+${t.bonusPercentual}%` : "sem bônus"}</span>
                 </li>
               ))}

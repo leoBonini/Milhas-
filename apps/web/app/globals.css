@@ -195,7 +195,10 @@ h2 { font-size: 1.05rem; margin: 28px 0 10px; }
 .destino { padding: 4px 14px 10px; }
 .destino h2 { margin: 12px 0 6px; }
 .linha-transf { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; padding: 8px 0; border-top: 1px solid var(--borda); }
-.linha-transf .campanha { grid-column: 1 / -1; margin: 0; font-size: 0.8rem; color: var(--texto-2); }
+.linha-transf .campanha {
+  grid-column: 1 / -1; margin: 0; font-size: 0.8rem; color: var(--texto-2);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
 .bonus { font-size: 0.85rem; color: var(--texto-3); white-space: nowrap; }
 .bonus.ativo { color: var(--positivo); font-weight: 700; }
 

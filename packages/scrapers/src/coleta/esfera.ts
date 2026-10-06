@@ -91,7 +91,11 @@ export function normalizarItemEsfera(item: ItemEsfera, agora = new Date()): Parc
     categorias: categoriasDoParceiro(categoriasOriginais, CATEGORIAS_ESFERA),
     categoriasOriginais,
     url: item.route ? `https://www.esfera.com.vc${item.route}` : null,
-    regra: [item.esf_accumulationPrefix, item.externalInfo?.amount ?? `${pontos ?? "?"} pts`, item.externalInfo?.rule ?? `a cada ${reais} real(is)`]
+    regra: [
+      item.esf_accumulationPrefix ? "Até" : null,
+      item.externalInfo?.amount?.replace(/\bpts?\b/i, "pontos") ?? `${pontos ?? "?"} ${pontos === 1 ? "ponto" : "pontos"}`,
+      item.externalInfo?.rule ?? (reais === 1 ? `por ${porDolar ? "dólar" : "real"}` : `a cada ${reais} ${porDolar ? "dólares" : "reais"}`),
+    ]
       .filter(Boolean)
       .join(" "),
   };

@@ -47,7 +47,7 @@ export function normalizarParidadeLivelo(p: ParidadeLivelo, info: InfoParceiroLi
     categorias: [],
     categoriasOriginais: info.categorias,
     url: `https://www.livelo.com.br/juntar-pontos/parceiros/${info.slug}/${p.partnerCode}`,
-    regra: `${ate ? "até " : ""}${pontos} pts a cada ${divisor} ${porDolar ? "dólar(es)" : "real(is)"}${
+    regra: `${ate ? "Até " : ""}${pontos} ${pontos === 1 ? "ponto" : "pontos"} ${divisor === 1 ? `por ${porDolar ? "dólar" : "real"}` : `a cada ${divisor} ${porDolar ? "dólares" : "reais"}`}${
       p.parityClub && p.parityClub > pontos ? ` · Clube Livelo: ${p.parityClub}` : ""
     }`,
   };

@@ -150,9 +150,11 @@ export function GraficoLoja({ slug, carregar = carregarDaApi }: { slug: string; 
       </div>
 
       <div className="sugestao">
-        {resposta.sugestoes.map((s) => (
-          <p key={s.programa}>{s.texto}</p>
-        ))}
+        {resposta.sugestoes.some((s) => s.temSugestao) ? (
+          resposta.sugestoes.filter((s) => s.temSugestao).map((s) => <p key={s.programa}>{s.texto}</p>)
+        ) : (
+          <p>Ainda estamos montando o histórico desta loja.</p>
+        )}
       </div>
     </div>
   );

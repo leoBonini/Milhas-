@@ -74,7 +74,7 @@ function Ofertas({ loja }: { loja: LojaDoDia }) {
           </span>
           <span className="regra">
             {o.regra}
-            {o.escopo !== "loja toda" ? ` · ${o.escopo}` : ""}
+            {o.escopo === "por dólar" ? " · compras em dólar" : ""}
           </span>
           {o.url && (
             <a href={o.url} target="_blank" rel="noopener noreferrer">

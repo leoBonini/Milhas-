@@ -40,7 +40,8 @@ export interface ParidadeEsfera {
   campaignId?: string | null;
 }
 
-const formatarRazao = (pontos: number, milhas: number) => `${+pontos.toFixed(2)}:${+milhas.toFixed(2)}`;
+const num = (n: number) => String(+n.toFixed(2)).replace(".", ",");
+const formatarRazao = (pontos: number, milhas: number) => `${num(pontos)}:${num(milhas)}`;
 
 /** Pode haver uma linha padrão e outra de campanha por destino. Bônus = quanto a campanha rende a mais. */
 export function normalizarTransferenciasEsfera(linhas: ParidadeEsfera[]): TransferenciaColetada[] {
@@ -73,7 +74,9 @@ const semHtml = (s: string) =>
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/\s+/g, " ")
+    .replace(/;\s*\./g, ";")
     .replace(/(\.\s*)+/g, ". ")
+    .replace(/\s+([.;,])/g, "$1")
     .trim();
 
 /** Procura no JSON da página o primeiro objeto com a chave "campaign". */
