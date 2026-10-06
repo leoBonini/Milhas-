@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { formatarPontos } from "@milhas/core";
-import type { RespostaHistorico } from "@/app/api/loja/[slug]/route";
+import type { RespostaHistorico } from "@/lib/historico";
 
 const PERIODOS = [
   { id: "6m", rotulo: "6 meses", dias: 182 },
@@ -52,7 +52,12 @@ function DicaGrafico({ active, payload, label }: { active?: boolean; payload?: {
   );
 }
 
-export function GraficoLoja({ slug }: { slug: string }) {
+export type CarregarHistorico = (slug: string) => Promise<RespostaHistorico>;
+
+const carregarDaApi: CarregarHistorico = (slug) =>
+  fetch(`/api/loja/${slug}`).then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))));
+
+export function GraficoLoja({ slug, carregar = carregarDaApi }: { slug: string; carregar?: CarregarHistorico }) {
   const [resposta, setResposta] = useState<RespostaHistorico | null>(null);
   const [erro, setErro] = useState(false);
   const [periodo, setPeriodo] = useState<(typeof PERIODOS)[number]["id"]>("1a");
@@ -62,14 +67,13 @@ export function GraficoLoja({ slug }: { slug: string }) {
     let ativo = true;
     setResposta(null);
     setErro(false);
-    fetch(`/api/loja/${slug}`)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then((j: RespostaHistorico) => ativo && setResposta(j))
+    carregar(slug)
+      .then((j) => ativo && setResposta(j))
       .catch(() => ativo && setErro(true));
     return () => {
       ativo = false;
     };
-  }, [slug]);
+  }, [slug, carregar]);
 
   const dadosPeriodo = useMemo(() => {
     if (!resposta?.serie.length) return [];

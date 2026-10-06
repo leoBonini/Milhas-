@@ -7,3 +7,4 @@ dist/
 saida/
 next-env.d.ts
 *.tsbuildinfo
+apps/web/demo-estatica/*.html

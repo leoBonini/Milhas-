@@ -3,9 +3,17 @@
 import { useEffect, useState } from "react";
 import { melhorValor, type LojaDoDia } from "@milhas/core";
 import { Valor } from "./Comuns";
-import { GraficoLoja } from "./GraficoLoja";
+import { GraficoLoja, type CarregarHistorico } from "./GraficoLoja";
 
-export function ListaLojas({ lojas, abertaInicial }: { lojas: LojaDoDia[]; abertaInicial?: string }) {
+export function ListaLojas({
+  lojas,
+  abertaInicial,
+  carregarHistorico,
+}: {
+  lojas: LojaDoDia[];
+  abertaInicial?: string;
+  carregarHistorico?: CarregarHistorico;
+}) {
   const [aberta, setAberta] = useState<string | undefined>(abertaInicial);
 
   useEffect(() => {
@@ -38,7 +46,7 @@ export function ListaLojas({ lojas, abertaInicial }: { lojas: LojaDoDia[]; abert
               <Valor pontos={l.livelo} destaque={l.livelo != null && l.livelo === melhor} />
               <Valor pontos={l.esfera} destaque={l.esfera != null && l.esfera === melhor} />
             </button>
-            {estaAberta && <GraficoLoja slug={l.parceiro.slug} />}
+            {estaAberta && <GraficoLoja slug={l.parceiro.slug} carregar={carregarHistorico} />}
           </div>
         );
       })}
