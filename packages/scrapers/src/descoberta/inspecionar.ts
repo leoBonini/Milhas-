@@ -55,21 +55,48 @@ async function esfera() {
 }
 
 async function livelo() {
-  // Tentativas de descoberta (não presumidas como certas): o resultado diz se existem.
+  const cab = { origin: "https://www.livelo.com.br", referer: "https://www.livelo.com.br/" };
+  const paridades = (await buscar("https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/parities/active", cab)) as
+    | Record<string, unknown>[]
+    | undefined;
+  if (Array.isArray(paridades)) {
+    console.log("Paridades:", paridades.length);
+    const planos = paridades.map((p) => achatar(p));
+    const chaves = [...new Set(planos.flatMap((p) => Object.keys(p)))].sort();
+    for (const k of chaves) {
+      if (k === "legalTerms") continue;
+      const valores = [...new Set(planos.map((p) => p[k]).filter((v) => v !== undefined).map(String))];
+      console.log(`${k} :: ${valores.length} distintos :: ${valores.slice(0, 8).join(" ¦ ").slice(0, 300)}`);
+    }
+    console.log("Com categoryParities:", JSON.stringify(paridades.filter((p) => (p.categoryParities as unknown[])?.length).slice(0, 2)).slice(0, 1500));
+    console.log("Códigos:", paridades.map((p) => `${p.partnerCode}=${p.parity}${p.promotion ? "*" : ""}`).join(" "));
+  }
+
+  // Página de parceiros sem navegador: procura dados embutidos e endereços de API no HTML
+  await new Promise((r) => setTimeout(r, 2000));
+  const r = await fetch("https://www.livelo.com.br/juntar-pontos/todos-os-parceiros", { headers: { "user-agent": UA, accept: "text/html" } });
+  const html = await r.text();
+  console.log(`\n=== ${r.status} página de parceiros (${html.length} bytes)`);
+  const apis = [...new Set(html.match(/https?:\/\/[a-z0-9.-]*(?:livelo|pontoslivelo)[a-z0-9.-]*\/[^"'\s<>)]*/gi) ?? [])];
+  console.log("URLs no HTML:", apis.slice(0, 60).join("\n"));
+  for (const m of html.matchAll(/<script[^>]*(?:__NEXT_DATA__|application\/json)[^>]*>([\s\S]{0,200})/g)) console.log("script JSON:", m[1]);
+  const codigo = html.match(/partnerCode[^,]{0,80}/g);
+  console.log("partnerCode no HTML:", codigo?.slice(0, 5));
+
   for (const url of [
-    "https://www.livelo.com.br/robots.txt",
-    "https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/parities/active",
-    "https://apis.pontoslivelo.com.br/api-bff-partners/v1/partners",
+    "https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/partners",
+    "https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/partners/active",
+    "https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/parities",
   ]) {
+    await new Promise((r) => setTimeout(r, 2000));
     try {
-      const j = await buscar(url, { origin: "https://www.livelo.com.br", referer: "https://www.livelo.com.br/" });
-      if (j !== undefined) console.log(JSON.stringify(j).slice(0, 3000));
+      const j = await buscar(url, cab);
+      if (j !== undefined) console.log(JSON.stringify(j).slice(0, 1500));
     } catch (e) {
       console.log(`falhou: ${url}: ${e instanceof Error ? e.message : e}`);
     }
-    await new Promise((r) => setTimeout(r, 2000));
   }
 }
 
-await esfera();
+if (process.env.INSPECIONAR !== "livelo") await esfera();
 await livelo();

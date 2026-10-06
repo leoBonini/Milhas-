@@ -39,6 +39,7 @@ jobs:
         if: inputs.modo == 'inspecionar'
         env:
           COLETA_USER_AGENT: ${{ vars.COLETA_USER_AGENT }}
+          INSPECIONAR: ${{ inputs.programa }}
         run: npm run inspecionar -w @milhas/scrapers
       - name: Descobrir
         if: inputs.modo != 'inspecionar'
