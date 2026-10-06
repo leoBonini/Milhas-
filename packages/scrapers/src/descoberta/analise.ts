@@ -9,6 +9,7 @@ export const LOJAS_ESPERADAS = [
 
 const CHAVE_NOME = /^(name|nome|title|titulo|partner.?name|parceiro|store.?name|loja|displayname)$/i;
 const CHAVE_PONTOS = /(point|ponto|pts|parity|paridade|multiplier|multiplicador|accrual|acumulo|rate|taxa|factor|fator|bonus)/i;
+const CHAVE_CATEGORIA = /(categor|segment|department|departamento|tag|group|grupo)/i;
 const CHAVE_ID = /^(id|_id|code|codigo|slug|partner.?id|partner.?code|store.?id)$/i;
 
 export interface ListaCandidata {
@@ -19,6 +20,9 @@ export interface ListaCandidata {
   chavesNome: string[];
   chavesPontos: string[];
   chavesId: string[];
+  chavesCategoria: string[];
+  /** Todos os itens da lista (para extrair nome/pontos/categoria no relatório) */
+  itens: Record<string, unknown>[];
   lojasEncontradas: string[];
   pontuacao: number;
   exemplos: unknown[];
@@ -56,6 +60,7 @@ function avaliarLista(caminho: string, lista: unknown[]): ListaCandidata | undef
   const chavesNome = chaves.filter((k) => CHAVE_NOME.test(ultimoSegmento(k)));
   const chavesPontos = chaves.filter((k) => CHAVE_PONTOS.test(k));
   const chavesId = chaves.filter((k) => CHAVE_ID.test(ultimoSegmento(k)));
+  const chavesCategoria = Object.keys(objetos[0] ?? {}).filter((k) => CHAVE_CATEGORIA.test(k));
 
   const textoLista = normalizar(JSON.stringify(objetos));
   // Palavra inteira: evita que a loja "Ponto" case com a chave "pontos"
@@ -75,6 +80,8 @@ function avaliarLista(caminho: string, lista: unknown[]): ListaCandidata | undef
     chavesNome,
     chavesPontos,
     chavesId,
+    chavesCategoria,
+    itens: objetos,
     lojasEncontradas,
     pontuacao,
     exemplos: objetos.slice(0, 2),
@@ -105,3 +112,26 @@ export function encontrarListasCandidatas(json: unknown, limiteProfundidade = 8)
  */
 export const REGEX_TEXTO_PONTOS =
   /(at[eé]\s+)?(\d+(?:[.,]\d+)?)\s*(?:pontos?|pts?)\s*(?:por|\/|a cada)\s*(?:r\$|real|reais)|(\d+(?:[.,]\d+)?)\s*[x×]\s*1\b/i;
+
+function lerCaminho(obj: Record<string, unknown>, chave: string): unknown {
+  return chave.split(".").reduce<unknown>((o, k) => (o && typeof o === "object" ? (o as Record<string, unknown>)[k] : undefined), obj);
+}
+
+function resumirValor(v: unknown): string {
+  if (v == null) return "";
+  if (typeof v !== "object") return String(v);
+  if (Array.isArray(v)) return v.map(resumirValor).filter(Boolean).join(", ").slice(0, 120);
+  const o = v as Record<string, unknown>;
+  const nome = o.name ?? o.nome ?? o.title ?? o.label ?? o.id;
+  return nome != null ? String(nome) : JSON.stringify(v).slice(0, 120);
+}
+
+/** Uma linha por item: nome | campos de pontos | campos de categoria. */
+export function linhasDosItens(c: ListaCandidata): string[] {
+  const colunas = [...c.chavesNome.slice(0, 1), ...c.chavesPontos, ...c.chavesCategoria, ...c.chavesId.slice(0, 1)];
+  const unicas = [...new Set(colunas)];
+  return [
+    unicas.join(" | "),
+    ...c.itens.map((item) => unicas.map((k) => resumirValor(lerCaminho(item, k)).replace(/\s+/g, " ")).join(" | ")),
+  ];
+}

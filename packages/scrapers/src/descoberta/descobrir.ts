@@ -18,7 +18,7 @@ import { mkdir, writeFile, appendFile } from "node:fs/promises";
 import path from "node:path";
 import { parseArgs } from "node:util";
 import { caminhoPermitido, interpretarRobots, type RegrasRobots } from "./robots.js";
-import { encontrarListasCandidatas, REGEX_TEXTO_PONTOS, type ListaCandidata } from "./analise.js";
+import { encontrarListasCandidatas, linhasDosItens, REGEX_TEXTO_PONTOS, type ListaCandidata } from "./analise.js";
 
 interface ConfigPrograma {
   id: "livelo" | "esfera";
@@ -273,7 +273,7 @@ async function descobrir(programa: ConfigPrograma, urlsExtras: string[], comTela
 
   await writeFile(
     path.join(pasta, "requisicoes.json"),
-    JSON.stringify(requisicoes.map(({ candidatas, ...r }) => ({ ...r, candidatas: candidatas.map(({ exemplos, ...c }) => c) })), null, 2),
+    JSON.stringify(requisicoes.map(({ candidatas, ...r }) => ({ ...r, candidatas: candidatas.map(({ exemplos, itens, ...c }) => c) })), null, 2),
   );
 
   const relatorio = montarRelatorio(programa, robots, paginas, requisicoes, bloqueadasPorRobots);
@@ -320,6 +320,14 @@ function montarRelatorio(
     if (r.corpoRequisicao) l.push(`- corpo da requisição: \`${r.corpoRequisicao.slice(0, 300)}\``);
     l.push("- headers enviados:", "```json", JSON.stringify(r.headersRequisicao, null, 2), "```");
     l.push("- exemplo de item:", "```json", JSON.stringify(c.exemplos[0], null, 2).slice(0, 2500), "```", "");
+  }
+
+  // Lista completa do melhor candidato: é o que vira a lista de parceiros de hoje
+  const melhor = candidatas[0];
+  if (melhor) {
+    l.push("", `### Itens do melhor candidato (${melhor.c.quantidade})`, "", "```");
+    l.push(...linhasDosItens(melhor.c).slice(0, 1500));
+    l.push("```");
   }
 
   l.push("", "### Todas as requisições JSON", "", "| # | método | status | bytes | url |", "|---|---|---|---|---|");
