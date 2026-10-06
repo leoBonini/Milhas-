@@ -56,6 +56,22 @@ async function esfera() {
   }
 }
 
+async function esferaTransferencias() {
+  const cab = { siteid: "esfera", origin: "https://www.esfera.com.vc", referer: "https://www.esfera.com.vc/" };
+  const j = await buscar("https://apigw.esfera.com.vc/bff-miles/ehis/parity/factor-wi?skus=saer,dazl,dacr,dcop,sair,dibp,sihg,dlta,dsml,stap,stks", cab);
+  console.log(JSON.stringify(j).slice(0, 4000));
+  await new Promise((r) => setTimeout(r, 2000));
+  const ids = "e000100738,e000100099,e000100002,e000100158,e000100695,e000200002,e000100730,e000100072,e000100736,e000100101,e000100734,e000100001,e000100732,e000200000,e000100698,e000100701,e000100704,e000100706,e000100710";
+  const p = (await buscar(`https://apigw.esfera.com.vc/bff-product/ehcs/products?limit=250&continueOnMissingProduct=true&productIds=${ids}`, cab)) as
+    | { items?: Record<string, unknown>[] }
+    | undefined;
+  for (const i of p?.items ?? []) {
+    const plano = achatar(i);
+    const campos = Object.entries(plano).filter(([k]) => /displayName|transfer|parity|factor|bonus|bônus|route|esf_skuCode|id$/i.test(k) && !/image/i.test(k));
+    console.log(`\n--- ${plano.displayName}: ${campos.map(([k, v]) => `${k}=${String(v).slice(0, 120)}`).join(" | ")}`);
+  }
+}
+
 async function livelo() {
   const cab = { origin: "https://www.livelo.com.br", referer: "https://www.livelo.com.br/" };
   const paridades = (await buscar("https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/parities/active", cab)) as
@@ -101,8 +117,25 @@ async function livelo() {
       }
     }
   }
-  const codigo = html.match(/partnerCode[^,]{0,80}/g);
-  console.log("partnerCode no HTML:", codigo?.slice(0, 5));
+  // Links de parceiros: /juntar-pontos/parceiros/<slug>/<CODIGO>
+  const links = new Map<string, string>();
+  for (const m of html.matchAll(/juntar-pontos\/parceiros\/([a-z0-9-]+)\/([A-Z0-9]{2,4})/g)) links.set(m[2]!, m[1]!);
+  console.log(`Links de parceiros distintos: ${links.size}`);
+  console.log([...links].map(([c, s]) => `${c}=${s}`).join(" "));
+  // Contexto em volta de partnerCode (para achar nome e categoria)
+  let n = 0;
+  for (const m of html.matchAll(/partnerCode/g)) {
+    if (n++ >= 4) break;
+    console.log(`\n[contexto ${n}] ${html.slice(Math.max(0, m.index! - 600), m.index! + 600).replace(/\s+/g, " ")}`);
+  }
+  console.log("\nTotal 'partnerCode' no HTML:", html.match(/partnerCode/g)?.length);
+  for (const termo of ["categor", "Eletr", "transferir", "latam", "smiles", "azul"]) {
+    const ocorr = [...html.matchAll(new RegExp(termo, "gi"))].length;
+    const ex = html.match(new RegExp(`.{0,150}${termo}.{0,150}`, "i"))?.[0]?.replace(/\s+/g, " ");
+    console.log(`\n[termo ${termo}] ${ocorr}x :: ${ex}`);
+  }
+  const linksTransf = [...new Set(html.match(/https?:\/\/[^"'\s<>]*transf[^"'\s<>]*/gi) ?? [])];
+  console.log("\nLinks com 'transf':", linksTransf.slice(0, 20).join("\n"));
 
   for (const url of [
     "https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/partners",
@@ -119,5 +152,7 @@ async function livelo() {
   }
 }
 
-if (process.env.INSPECIONAR !== "livelo") await esfera();
-await livelo();
+const alvo = process.env.INSPECIONAR || "todos";
+if (alvo === "esfera" || alvo === "todos") await esfera();
+if (alvo === "transferencias" || alvo === "todos") await esferaTransferencias();
+if (alvo === "livelo" || alvo === "todos" || alvo === "transferencias") await livelo();
