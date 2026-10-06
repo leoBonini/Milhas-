@@ -42,8 +42,8 @@ const PROGRAMAS: ConfigPrograma[] = [
   },
 ];
 
-const USER_AGENT = process.env.COLETA_USER_AGENT ?? "MilhasBot/0.1 (descoberta de fontes; +https://github.com/leoBonini/Milhas-)";
-const INTERVALO_MS = Number(process.env.COLETA_INTERVALO_MS ?? 3000);
+const USER_AGENT = process.env.COLETA_USER_AGENT || "MilhasBot/0.1 (descoberta de fontes; +https://github.com/leoBonini/Milhas-)";
+const INTERVALO_MS = Number(process.env.COLETA_INTERVALO_MS || 3000);
 const MAX_PAGINAS = 6;
 const MAX_CORPO_BYTES = 5_000_000;
 const PASTA_SAIDA = path.resolve(process.cwd(), process.env.DESCOBERTA_SAIDA ?? "../../saida/descoberta");

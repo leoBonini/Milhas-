@@ -6,6 +6,10 @@ name: Descoberta de fontes
 on:
   workflow_dispatch:
     inputs:
+      modo:
+        description: "descobrir (navegador) ou inspecionar (chama as APIs já encontradas)"
+        default: descobrir
+        required: true
       programa:
         description: "livelo, esfera ou todos"
         default: todos
@@ -29,8 +33,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
+        if: inputs.modo != 'inspecionar'
         working-directory: packages/scrapers
+      - name: Inspecionar APIs
+        if: inputs.modo == 'inspecionar'
+        env:
+          COLETA_USER_AGENT: ${{ vars.COLETA_USER_AGENT }}
+        run: npm run inspecionar -w @milhas/scrapers
       - name: Descobrir
+        if: inputs.modo != 'inspecionar'
         env:
           COLETA_USER_AGENT: ${{ vars.COLETA_USER_AGENT }}
           PROGRAMA: ${{ inputs.programa }}
