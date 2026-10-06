@@ -37,3 +37,20 @@ test("a cada N reais e dólar", () => {
 test("sem nome conhecido não entra", () => {
   assert.equal(normalizarParidadeLivelo({ partnerCode: "ZZZ", parity: 3 }, undefined), null);
 });
+
+import { lerCartoesLivelo } from "./livelo";
+
+test("cartões: nome pelo alt, sem confundir 'Pontofrio' com pontuação", () => {
+  const cartao = (slug: string, cod: string, alt: string, textos: string[]) =>
+    `<a data-testid="a_PartnerCard_card_link" href="https://www.livelo.com.br/juntar-pontos/parceiros/${slug}/${cod}"><img data-testid="img_PartnerCard_partnerImage" alt="${alt}"/>${textos
+      .map((t) => `<span data-testid="Text_Typography">${t}</span>`)
+      .join("")}</a>`;
+  const html =
+    cartao("pontofrio", "PTF", "Pontofrio", ["Até 1 ponto por R$1"]) +
+    cartao("mercado-livre", "MCL", "", ["Promoção", "Mercado Livre", "Até 2 pontos por R$1", "Ir para regras do parceiro"]) +
+    cartao("cea", "CEA", "Ganhe 3 pontos", []);
+  assert.deepEqual(
+    lerCartoesLivelo(html).map((c) => [c.codigo, c.nome]),
+    [["PTF", "Pontofrio"], ["MCL", "Mercado Livre"], ["CEA", "Cea"]],
+  );
+});

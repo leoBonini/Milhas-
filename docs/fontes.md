@@ -1,124 +1,116 @@
 # Fontes de dados
 
-> **Status: pendente.** Nenhuma URL abaixo foi presumida. As seções serão preenchidas
-> com o resultado real do script de descoberta (`npm run descobrir`), rodado onde houver
-> acesso aos sites (GitHub Actions ou máquina local).
+Levantadas em 2026-10-06 pela descoberta (`npm run descobrir`) e pela inspeção
+(`npm run inspecionar`), rodadas no GitHub Actions. Nada aqui foi presumido: cada
+endereço foi chamado e a resposta conferida.
 
-## Como gerar as informações
-
-1. GitHub: **Actions > Descoberta de fontes > Run workflow** (programa = `todos`).
-2. O resumo aparece na própria execução (Summary). O artefato `descoberta-<id>` traz:
-   - `relatorio.md`: robots.txt, páginas visitadas, candidatos a endpoint JSON (com headers e exemplo de item) e seletores HTML alternativos
-   - `requisicoes.json`: todas as requisições XHR/fetch capturadas
-   - `corpos/NNN.json`: corpo de cada resposta JSON
-   - `paginas/NN.html` e `NN.png`: HTML renderizado e print de cada página
-3. Se a página de parceiros não for achada pelos links da home, rode de novo informando a URL
-   em `url` (escolhendo um programa só).
-4. Se o site bloquear o navegador headless, rode localmente com tela:
-   `npm run descobrir -- --programa livelo --com-tela`
-
-Como o script decide o que é "candidato": percorre cada JSON e pontua listas de objetos que
-tenham campo de nome (`name`, `nome`, `title`…), campo de pontos (`points`, `pontos`,
-`parity`, `multiplier`, `accrual`…), campo de id, e que citem lojas conhecidas
-(Magalu, Fast Shop, Amazon…). No HTML, procura textos como "10 pontos por real" e "8x1"
-e agrupa pelo seletor CSS.
-
----
-
-## Livelo
-
-| Item | Valor |
-|---|---|
-| Página de parceiros | https://www.livelo.com.br/juntar-pontos/todos-os-parceiros (informada pelo usuário; endpoints por trás dela ainda a descobrir) |
-| robots.txt | _pendente_ |
-| Tipo de fonte | _pendente_ (JSON ou HTML) |
-
-### Endpoint de parceiros
-
-- URL: _pendente_
-- Método e parâmetros: _pendente_
-- Headers necessários: _pendente_
-- Paginação: _pendente_
-
-Exemplo de resposta (resumido):
-
-```json
-pendente
-```
-
-Campos usados:
-
-| Campo na resposta | Uso no banco |
-|---|---|
-| _pendente_ | `parceiro_programa.id_externo` |
-| _pendente_ | `parceiros.nome` |
-| _pendente_ | `pontuacoes.pontos_por_real` |
-| _pendente_ | `pontuacoes.pontos_base` |
-| _pendente_ | `parceiro_programa.url_parceiro` |
-
-### Seletores HTML (se não houver JSON)
-
-_pendente_
+Regras de acesso usadas pelos coletores: user agent identificável (`COLETA_USER_AGENT`),
+3 s entre requisições ao mesmo site, só GET em páginas/APIs públicas que o próprio site usa.
+robots.txt da Livelo: `User-agent: * / Allow: /`.
 
 ---
 
 ## Esfera
 
-| Item | Valor |
+### Parceiros e pontuação (JSON)
+
+- **GET** `https://apigw.esfera.com.vc/bff-product/ehcs/products?categoryId=esf02163`
+- Headers necessários: `siteid: esfera`, `origin: https://www.esfera.com.vc`, `referer: https://www.esfera.com.vc/`
+- Resposta (~2,9 MB): `{ totalResults: 170, limit: 250, items: [...] }`. Sem paginação enquanto `totalResults <= 250`
+  (o coletor falha se passar disso).
+- Página correspondente no site: https://www.esfera.com.vc/junte-pontos/junte-pontos/esf02163
+
+Campos usados de cada item:
+
+| Campo | Uso |
 |---|---|
-| Página de parceiros | _pendente_ |
-| robots.txt | _pendente_ |
-| Tipo de fonte | _pendente_ (JSON ou HTML) |
+| `id` (ex: `e000100100`) | `idExterno` |
+| `displayName` | nome da loja |
+| `esf_accumulationValue` | pontos (numerador) |
+| `esf_accumulationFactorValue` | a cada N reais (denominador). Pontos por real = valor / fator |
+| `esf_accumulationPrefix` | "Até" → escopo "até" |
+| `esf_accumulationFactorDescription` | "Real em compra" / "dólar em compra" (dólar → escopo "por dólar") |
+| `externalInfo.amount` + `externalInfo.rule` | texto exibido, ex: "De 6 a 8 pts" "a cada 2 reais" (usa o maior) |
+| `esf_tempOfferAccumulationValue`, `esf_tempOfferInit`, `esf_tempOfferEnd` | oferta temporária (só conta dentro da janela; datas `dd-mm-yyyy HH:MM`, placeholder `dd-mm-yyyy HH:MM` = sem oferta) |
+| `skuForShowcase.categoryIds`, `parentCategories[].repositoryId` | categorias (mapeadas em `packages/core/src/categorias.ts`) |
+| `route` | link: `https://www.esfera.com.vc{route}` |
 
-### Endpoint de parceiros
+Exemplos reais: Magalu `1/1` = 1 pt/R$ (até); Dell `1/3` = 0,33; Azul `1/4` = 0,25.
 
-- URL: _pendente_
-- Método e parâmetros: _pendente_
-- Headers necessários: _pendente_
-- Paginação: _pendente_
+### Transferência para milhas
 
-Exemplo de resposta (resumido):
-
-```json
-pendente
-```
-
-Campos usados:
-
-| Campo na resposta | Uso no banco |
-|---|---|
-| _pendente_ | `parceiro_programa.id_externo` |
-| _pendente_ | `parceiros.nome` |
-| _pendente_ | `pontuacoes.pontos_por_real` |
-| _pendente_ | `pontuacoes.pontos_base` |
-| _pendente_ | `parceiro_programa.url_parceiro` |
-
-### Seletores HTML (se não houver JSON)
-
-_pendente_
+- **GET** `https://apigw.esfera.com.vc/bff-miles/ehis/parity/factor-wi?skus=dlta,dsml,dazl,...` (mesmos headers)
+- Resposta: `[{ partnerIdentifier: "dlta", points: 1, miles: 1, type: "DEFAULT", campaignId: null }, ...]`
+- `dlta` LATAM Pass, `dsml` Smiles, `dazl` Azul, `dibp` Iberia, `stap` TAP, `sair` Flying Blue, etc.
+- Bônus = paridade padrão ÷ paridade da campanha − 1 (linha com `campaignId`). Em 2026-10-06 todas eram `DEFAULT` (sem bônus).
 
 ---
 
-## Nomes exatos das lojas iniciais
+## Livelo
 
-Confirmar com os dados reais e atualizar `supabase/seed.sql` (nome e aliases).
+O site `www.livelo.com.br` bloqueia navegador automatizado (headless) com "Access Denied",
+mas responde normalmente a requisições simples com o nosso user agent.
 
-| Seed | Nome na Livelo | Nome na Esfera |
+### Paridades (JSON)
+
+- **GET** `https://apis.pontoslivelo.com.br/api-bff-partners-parities/v1/parities/active`
+- Headers: `origin: https://www.livelo.com.br`, `referer: https://www.livelo.com.br/`
+- Resposta: lista com 468 itens:
+
+```json
+{"partnerCode":"AGE","currency":"R$","currencyValue":1,"parity":4,"parityClub":6,
+ "parityBau":1,"promotion":true,"separator":"até","categoryParities":[]}
+```
+
+| Campo | Uso |
+|---|---|
+| `partnerCode` | código da loja (casa com a página de parceiros) |
+| `parity` | pontos hoje (com promoção) |
+| `parityBau` | pontuação padrão → `pontosBase` |
+| `parityClub` | pontos para assinantes do Clube Livelo (mostrado na regra) |
+| `currencyValue` | a cada N reais; `currency` `U$` → por dólar |
+| `separator` = "até", `categoryParities` | escopo "até (varia por produto ou categoria)"; vale o maior |
+| `promotion` | selo de promoção |
+
+### Nomes dos parceiros (HTML)
+
+- **GET** `https://www.livelo.com.br/juntar-pontos/todos-os-parceiros` (HTML ~1,5 MB, renderizado no servidor)
+- Cada parceiro é um cartão `<a data-testid="a_PartnerCard_card_link" href=".../juntar-pontos/parceiros/<slug>/<CODIGO>">`
+  com imagem `data-testid="img_PartnerCard_partnerImage"` (alt) e textos `data-testid="Text_Typography"`.
+- 251 cartões em 2026-10-06. **Só entra no app quem tem cartão nesta página** (parceiro ativo hoje).
+- A página não traz categoria por loja: a categoria vem da mesma loja na Esfera ou do nome (`categoriasPorNome`).
+
+### Transferência para milhas (HTML com dados embutidos)
+
+- `https://www.livelo.com.br/livelo-para-parceiros/latam/MTPTransfer` (LATAM Pass)
+- `https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer` (Smiles)
+- `https://www.livelo.com.br/livelo-para-parceiros/azul/AZLTransfer` (Azul)
+- Dentro de `<script id="__NEXT_DATA__">`, o objeto `partner.campaign` traz `bonus` (texto) e
+  `longDescription` (HTML com validade e faixas, ex: "40% de bônus para não assinantes ... 100% para ...").
+- O coletor pega o maior e o menor % e a última data do texto como fim; **campanha vencida é descartada**
+  (a página da Smiles ainda mostrava uma campanha de 28 a 30/09 em 06/10).
+- A paridade base (pontos:milhas) não aparece nessas páginas.
+
+---
+
+## Lojas iniciais (seed) × realidade em 2026-10-06
+
+| Seed | Livelo | Esfera |
 |---|---|---|
-| Apple | _pendente_ | _pendente_ |
-| Fast Shop | _pendente_ | _pendente_ |
-| Magalu | _pendente_ | _pendente_ |
-| Casas Bahia | _pendente_ | _pendente_ |
-| Extra | _pendente_ | _pendente_ |
-| Ponto | _pendente_ | _pendente_ |
-| Amazon | _pendente_ | _pendente_ |
-| Carrefour | _pendente_ | _pendente_ |
-| Americanas | _pendente_ | _pendente_ |
-| Samsung | _pendente_ | _pendente_ |
-| Mercado Livre | _pendente_ | _pendente_ |
-| Kabum | _pendente_ | _pendente_ |
-| Girafa | _pendente_ | _pendente_ |
+| Apple | não é parceira | não é parceira |
+| Fast Shop | FST | sim |
+| Magalu | MZL | sim |
+| Casas Bahia | CSB | não |
+| Extra | EXT | não |
+| Ponto | PTF (Pontofrio) | não |
+| Amazon | não | não |
+| Carrefour | Carrefour Mercado (CRM) e Carrefour Shopping (CRF) | Carrefour |
+| Americanas | não | não |
+| Samsung | cartão SSG na página, mas sem paridade na API (não entra) | sim |
+| Mercado Livre | MCL | não |
+| Kabum | KBM (Kabum!) | sim |
+| Girafa | não | não |
 
 ## Blogs (Fase 2)
 
-Passageiro de Primeira e Pontos pra Voar: páginas de arquivo/tag a descobrir na Fase 2.
+Passageiro de Primeira e Pontos pra Voar: a descobrir na Fase 2.

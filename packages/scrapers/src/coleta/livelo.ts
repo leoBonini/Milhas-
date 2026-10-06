@@ -82,9 +82,10 @@ export function lerCartoesLivelo(html: string): InfoParceiroLivelo[] {
       cartao.match(/alt="([^"]*)"[^>]*?data-testid="img_PartnerCard_partnerImage"/)?.[1];
     const textos = [...cartao.matchAll(/data-testid="Text_Typography"[^>]*>([^<]{2,80})</g)].map((m) => decodificar(m[1]!));
     // Textos de pontuação ("Até 5 pontos por R$1") e selos ("Promoção") não são o nome
-    const textoNome = textos.find((t) => !/ponto|pts|r\$|promo|clube|novo|exclusiv|ir para|regras|saiba|confira|ver mais/i.test(t));
+    // Pontuação sempre tem número ("Até 5 pontos por R$1"); nomes como "Pontofrio" não
+    const textoNome = textos.find((t) => !/\d|pts|r\$|promo|clube|novo|exclusiv|ir para|regras|saiba|confira|ver mais/i.test(t));
     const altLimpo = img ? decodificar(img).replace(/^logo( d[aoe])?\s+/i, "") : "";
-    const nome = (altLimpo && !/ponto|ganhe/i.test(altLimpo) ? altLimpo : textoNome) || tituloDoSlug(slug!);
+    const nome = (altLimpo && !/\d|ganhe/i.test(altLimpo) ? altLimpo : textoNome) || tituloDoSlug(slug!);
     if (!resultado.has(codigo!)) resultado.set(codigo!, { codigo: codigo!, nome, slug: slug!, categorias: [] });
   }
   return [...resultado.values()];
