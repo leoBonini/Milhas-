@@ -56,3 +56,23 @@ slots 1 (azul) e 2 (laranja) da paleta categórica validada, com versões para t
 **PWA.** Manifest e ícones gerados pelo Next (sem binários no repo) e service worker com
 cache de arquivos estáticos e rede-primeiro para páginas. O mesmo service worker receberá o
 Web Push na Fase 4.
+
+## 2026-10-06 — Dados reais (Fase 1)
+
+**Arquivos no repositório no lugar do banco, por enquanto.** A coleta grava `dados/coleta/hoje.json`
+e `historico.json` e faz commit; a Vercel republica o app a cada push. Custo zero e nenhuma chave
+necessária. O Supabase continua previsto (login, desejos e alertas) e a fonte de dados do app já
+suporta os dois. Quando o histórico crescer muito, migrar para o banco.
+
+**"Parceira hoje" = está na coleta mais recente.** Livelo: cartão na página "todos os parceiros"
+e paridade na API. Esfera: item na API de parceiros. Loja que sai do site some do app na coleta seguinte.
+
+**Sem navegador na coleta.** A Livelo bloqueia navegador automatizado, mas não requisições simples;
+as duas fontes são JSON ou HTML renderizado no servidor. Mais rápido e mais leve.
+
+**Categorias.** A Esfera informa categorias (mapeadas no core). A Livelo não: usamos a categoria da
+mesma loja na Esfera, um dicionário de lojas conhecidas (o que vendem, não se são parceiras) e
+palavras do nome. Seguro/consórcio sempre em Serviços. O que sobra vai para "Outros" e é listado no log.
+
+**Transferências.** Bônus = maior % anunciado na campanha (e o menor, para "todos os clientes").
+Campanha com data de fim no passado é ignorada (a Livelo deixa a antiga na página).

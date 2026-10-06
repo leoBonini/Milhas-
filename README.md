@@ -33,11 +33,12 @@ npm run typecheck
 npm run dev -w @milhas/web     # http://localhost:3000
 ```
 
-Sem `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` o app roda com **dados de
-demonstração** (simulados, com aviso amarelo na tela). Com as duas variáveis preenchidas,
-lê do Supabase (view `pontuacao_diaria`). O app nunca chama sites externos: só lê o banco.
+O app lê os **dados reais** gravados pela coleta agendada em `dados/coleta/` (hoje.json e
+historico.json). Se `NEXT_PUBLIC_SUPABASE_URL`/`NEXT_PUBLIC_SUPABASE_ANON_KEY` forem
+preenchidas, lê do Supabase. O app nunca chama sites externos: só lê dados prontos.
 
-Telas: Início (melhores de hoje + categorias), Busca (normaliza o termo e procura em
+Telas: barra de categorias, Início (melhores de hoje), Transferir para milhas (bônus LATAM Pass,
+Smiles, Azul e outros), Busca (normaliza o termo e procura em
 `palavras_chave`), Categoria (lojas ordenadas, Livelo e Esfera lado a lado) e, ao tocar
 numa loja, gráfico do histórico com filtros 6 meses / 1 ano / tudo e sugestão de melhor mês.
 
@@ -47,6 +48,16 @@ numa loja, gráfico do histórico com filtros 6 meses / 1 ano / tudo e sugestão
 2. Root Directory: `apps/web` (o Vercel detecta o Next.js e instala o monorepo).
 3. Variáveis: `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY` (ou deixe vazio para o modo demonstração).
 4. Deploy. No celular, abra o endereço e use "Adicionar à tela inicial".
+
+## Coleta (Fase 1)
+
+```bash
+npm run coletar -w @milhas/scrapers   # grava dados/coleta/hoje.json e historico.json
+```
+
+No GitHub roda sozinha 3x ao dia (8h, 13h, 19h) pelo workflow **Coleta diária** e faz commit dos
+dados. Se um site mudar e a coleta vier vazia ou bem menor, o job fica vermelho e os dados
+antigos são mantidos. Fontes documentadas em [docs/fontes.md](docs/fontes.md).
 
 ## Fase 0 — descoberta das fontes
 
