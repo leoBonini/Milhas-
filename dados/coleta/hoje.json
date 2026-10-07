@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-07T17:38:27.503Z",
+ "coletadoEm": "2026-10-07T21:01:00.148Z",
  "data": "2026-10-07",
  "totais": {
   "livelo": 249,
@@ -1572,7 +1572,7 @@
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/darkness/e000101040",
-    "regra": "2 pontos a cada 2 reais"
+    "regra": "2 pontos a cada 1 real"
    }
   },
   {
@@ -2887,7 +2887,7 @@
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/iherb/e000101041",
-    "regra": "2 pontos a cada 2 reais"
+    "regra": "2 pontos a cada 1 real"
    }
   },
   {
@@ -2976,7 +2976,7 @@
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/integral-medica/e000101042",
-    "regra": "2 pontos a cada 2 reais"
+    "regra": "2 pontos a cada 1 real"
    }
   },
   {
@@ -4408,7 +4408,7 @@
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/nutrify/e000101038",
-    "regra": "2 pontos a cada 2 reais"
+    "regra": "2 pontos a cada 1 real"
    }
   },
   {
