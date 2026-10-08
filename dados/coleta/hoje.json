@@ -1,10 +1,10 @@
 {
- "coletadoEm": "2026-10-08T17:41:34.362Z",
+ "coletadoEm": "2026-10-08T21:03:10.764Z",
  "data": "2026-10-08",
  "totais": {
-  "livelo": 249,
-  "esfera": 170,
-  "lojas": 361
+  "livelo": 244,
+  "esfera": 162,
+  "lojas": 349
  },
  "lojas": [
   {
@@ -1063,23 +1063,6 @@
     "regra": "3 pontos por real"
    },
    "esfera": null
-  },
-  {
-   "slug": "casa-flora",
-   "nome": "Casa Flora",
-   "categorias": [
-    "casa",
-    "mercado"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/casa-flora/e000100637",
-    "regra": "Até 2 pontos a cada real"
-   }
   },
   {
    "slug": "casas-bahia",
@@ -2357,22 +2340,6 @@
    "esfera": null
   },
   {
-   "slug": "foreo",
-   "nome": "Foreo",
-   "categorias": [
-    "beleza"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/foreo/e000100657",
-    "regra": "Até 2 pontos a cada real"
-   }
-  },
-  {
    "slug": "forever-liss",
    "nome": "Forever Liss",
    "categorias": [
@@ -2401,39 +2368,6 @@
     "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/fossil/SCS",
     "regra": "2 pontos por real"
-   },
-   "esfera": null
-  },
-  {
-   "slug": "freixenet",
-   "nome": "Freixenet",
-   "categorias": [
-    "mercado"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/freixenet/e000100685",
-    "regra": "Até 1 pontos a cada real"
-   }
-  },
-  {
-   "slug": "frigelar",
-   "nome": "Frigelar",
-   "categorias": [
-    "eletronicos",
-    "casa"
-   ],
-   "livelo": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/frigelar/FRG",
-    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -2597,22 +2531,6 @@
     "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/guess/GSS",
     "regra": "2 pontos por real"
-   },
-   "esfera": null
-  },
-  {
-   "slug": "guldi",
-   "nome": "Guldi",
-   "categorias": [
-    "casa"
-   ],
-   "livelo": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/guldi/GUL",
-    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -2837,22 +2755,6 @@
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/hoteis/HTC",
-    "regra": "1 ponto por real"
-   },
-   "esfera": null
-  },
-  {
-   "slug": "hotel-nacional",
-   "nome": "Hotel Nacional",
-   "categorias": [
-    "viagem"
-   ],
-   "livelo": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/hotel-nacional/WHN",
     "regra": "1 ponto por real"
    },
    "esfera": null
@@ -3812,23 +3714,6 @@
    }
   },
   {
-   "slug": "maisbarato-net",
-   "nome": "Maisbarato.net",
-   "categorias": [
-    "casa",
-    "infantil"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/maisbarato/e000100635",
-    "regra": "Até 2 pontos a cada real"
-   }
-  },
-  {
    "slug": "maltacor",
    "nome": "Maltacor",
    "categorias": [
@@ -4714,22 +4599,6 @@
    }
   },
   {
-   "slug": "phooto",
-   "nome": "Phooto",
-   "categorias": [
-    "casa"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/phooto/e000100569",
-    "regra": "Até 1 pontos a cada real"
-   }
-  },
-  {
    "slug": "piatan-natural",
    "nome": "Piatan Natural",
    "categorias": [
@@ -4793,22 +4662,6 @@
     "regra": "1 ponto por real"
    },
    "esfera": null
-  },
-  {
-   "slug": "polar",
-   "nome": "Polar",
-   "categorias": [
-    "casa"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/polar/e000100418",
-    "regra": "Até 2 pontos a cada real"
-   }
   },
   {
    "slug": "polishop",
@@ -5998,8 +5851,7 @@
    "slug": "umbro",
    "nome": "Umbro",
    "categorias": [
-    "moda",
-    "esporte"
+    "outros"
    ],
    "livelo": {
     "pontosPorReal": 2,
@@ -6009,14 +5861,7 @@
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/umbro/FIL",
     "regra": "2 pontos por real"
    },
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/umbro/e000100634",
-    "regra": "Até 2 pontos a cada real"
-   }
+   "esfera": null
   },
   {
    "slug": "under-armour",
@@ -6100,22 +5945,6 @@
    }
   },
   {
-   "slug": "viajar",
-   "nome": "Viajar",
-   "categorias": [
-    "viagem"
-   ],
-   "livelo": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/viajar/VJR",
-    "regra": "2 pontos por real"
-   },
-   "esfera": null
-  },
-  {
    "slug": "vivara",
    "nome": "Vivara",
    "categorias": [
@@ -6155,22 +5984,6 @@
    "esfera": null
   },
   {
-   "slug": "vult",
-   "nome": "Vult",
-   "categorias": [
-    "beleza"
-   ],
-   "livelo": {
-    "pontosPorReal": 3,
-    "pontosBase": 3,
-    "escopo": "loja toda",
-    "promocao": false,
-    "url": "https://www.livelo.com.br/juntar-pontos/parceiros/vult/VUL",
-    "regra": "3 pontos por real"
-   },
-   "esfera": null
-  },
-  {
    "slug": "wala-place",
    "nome": "Wala Place",
    "categorias": [
@@ -6184,24 +5997,6 @@
     "escopo": "até (varia por produto ou cliente)",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/wala-place/e000100689",
-    "regra": "Até 2 pontos a cada real"
-   }
-  },
-  {
-   "slug": "weconnect",
-   "nome": "Weconnect",
-   "categorias": [
-    "eletronicos",
-    "casa",
-    "livros"
-   ],
-   "livelo": null,
-   "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
-    "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
-    "url": "https://www.esfera.com.vc/p/weconnect/e000100581",
     "regra": "Até 2 pontos a cada real"
    }
   },
