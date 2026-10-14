@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-14T15:40:51.624Z",
+ "coletadoEm": "2026-10-14T19:59:56.892Z",
  "data": "2026-10-14",
  "totais": {
   "livelo": 245,
@@ -1757,12 +1757,12 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
+    "pontosPorReal": 0.5,
+    "pontosBase": 0.5,
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/drogaria-pacheco/e000101043",
-    "regra": "1 pontos a cada 1 real"
+    "regra": "1 pontos a cada 2 reais"
    }
   },
   {
@@ -3214,12 +3214,12 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
+    "pontosPorReal": 0.5,
+    "pontosBase": 0.5,
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/leroy-merlin/e000101051",
-    "regra": "1 pontos a cada 1 real"
+    "regra": "1 pontos a cada 2 reais"
    }
   },
   {
@@ -4302,12 +4302,12 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 3,
-    "pontosBase": 0.5,
+    "pontosPorReal": 1.5,
+    "pontosBase": 1.5,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "url": "https://www.esfera.com.vc/p/nutrify/e000101038",
-    "regra": "3 pontos a cada 1 real"
+    "regra": "3 pontos a cada 2 reais"
    }
   },
   {
