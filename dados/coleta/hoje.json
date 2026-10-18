@@ -1,6 +1,6 @@
 {
- "coletadoEm": "2026-10-17T23:40:53.462Z",
- "data": "2026-10-17",
+ "coletadoEm": "2026-10-18T14:14:08.683Z",
+ "data": "2026-10-18",
  "totais": {
   "livelo": 245,
   "esfera": 164,
@@ -4172,12 +4172,12 @@
     "regra": "Até 4 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 10,
-    "pontosBase": 10,
+    "pontosPorReal": 2,
+    "pontosBase": 2,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/natura/e000100135",
-    "regra": "Até 10 pontos a cada real"
+    "regra": "Até 2 pontos a cada real"
    }
   },
   {
@@ -4999,9 +4999,9 @@
     "pontosPorReal": 2,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/renner/RNN",
-    "regra": "2 pontos por real · Clube Livelo: 3"
+    "regra": "2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 2,
