@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-20T15:32:07.307Z",
+ "coletadoEm": "2026-10-20T19:50:48.171Z",
  "data": "2026-10-20",
  "totais": {
   "livelo": 245,
@@ -1545,7 +1545,6 @@
    "nome": "Decathlon",
    "categorias": [
     "moda",
-    "beleza",
     "esporte"
    ],
    "livelo": {
@@ -1718,7 +1717,6 @@
    "slug": "drogaria-araujo",
    "nome": "Drogaria Araujo",
    "categorias": [
-    "beleza",
     "esporte",
     "mercado",
     "saude"
@@ -1755,6 +1753,7 @@
    "slug": "drogaria-sao-paulo",
    "nome": "Drogaria Sao Paulo",
    "categorias": [
+    "beleza",
     "esporte",
     "mercado",
     "saude"
@@ -1780,7 +1779,6 @@
    "slug": "drogaria-venancio",
    "nome": "Drogaria Venancio",
    "categorias": [
-    "beleza",
     "esporte",
     "mercado",
     "saude"
@@ -2149,6 +2147,7 @@
    "slug": "extrafarma",
    "nome": "Extrafarma",
    "categorias": [
+    "beleza",
     "esporte",
     "mercado",
     "saude"
@@ -4480,6 +4479,7 @@
    "slug": "pague-menos",
    "nome": "Pague Menos",
    "categorias": [
+    "beleza",
     "esporte",
     "mercado",
     "saude"
@@ -5325,8 +5325,7 @@
     "moda",
     "beleza",
     "casa",
-    "esporte",
-    "infantil"
+    "esporte"
    ],
    "livelo": {
     "pontosPorReal": 1,
