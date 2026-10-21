@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-21T15:48:15.324Z",
+ "coletadoEm": "2026-10-21T19:56:02.871Z",
  "data": "2026-10-21",
  "totais": {
   "livelo": 245,
@@ -6295,10 +6295,10 @@
    "programa": "livelo",
    "destino": "Smiles",
    "paridade": null,
-   "bonusPercentual": 0,
-   "bonusMinimo": 0,
-   "validaAte": null,
-   "campanha": null,
+   "bonusPercentual": 70,
+   "bonusMinimo": 40,
+   "validaAte": "2026-10-22",
+   "campanha": "Válido das 10h do dia 21/10 às 23h59 do dia 22/10/26. 40% bônus para todos os clientes. 70% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
