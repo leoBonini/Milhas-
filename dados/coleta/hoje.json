@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-28T16:57:26.507Z",
+ "coletadoEm": "2026-10-28T20:47:51.907Z",
  "data": "2026-10-28",
  "totais": {
   "livelo": 245,
@@ -4153,12 +4153,12 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 4,
-    "pontosBase": 4,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": false,
+    "pontosPorReal": 15,
+    "pontosBase": 2,
+    "escopo": "loja toda",
+    "promocao": true,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/natura/NTR",
-    "regra": "Até 4 pontos por real"
+    "regra": "15 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 2,
