@@ -1,6 +1,6 @@
 {
- "coletadoEm": "2026-10-29T01:27:30.236Z",
- "data": "2026-10-28",
+ "coletadoEm": "2026-10-29T17:16:25.638Z",
+ "data": "2026-10-29",
  "totais": {
   "livelo": 245,
   "esfera": 163,
@@ -2245,12 +2245,12 @@
     "regra": "Até 5 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 2,
-    "pontosBase": 2,
+    "pontosPorReal": 5,
+    "pontosBase": 5,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/fastshop/e000100585",
-    "regra": "Até 2 pontos a cada real"
+    "regra": "Até Até 5 pontos a cada real"
    }
   },
   {
@@ -2417,12 +2417,12 @@
     "casa"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 4,
     "pontosBase": 2,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": false,
+    "escopo": "loja toda",
+    "promocao": true,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/gocase/GCS",
-    "regra": "Até 2 pontos por real"
+    "regra": "4 pontos por real · Clube Livelo: 5"
    },
    "esfera": {
     "pontosPorReal": 2,
@@ -2834,12 +2834,12 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 20,
     "pontosBase": 1,
-    "escopo": "loja toda",
+    "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/insider-store/INS",
-    "regra": "8 pontos por real · Clube Livelo: 13"
+    "regra": "Até 20 pontos por real"
    },
    "esfera": null
   },
@@ -3666,12 +3666,12 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 2,
     "pontosBase": 2,
-    "escopo": "loja toda",
-    "promocao": true,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/magalu/MZL",
-    "regra": "3 pontos por real"
+    "regra": "Até 2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4153,12 +4153,12 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 15,
-    "pontosBase": 2,
-    "escopo": "loja toda",
-    "promocao": true,
+    "pontosPorReal": 4,
+    "pontosBase": 4,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/natura/NTR",
-    "regra": "15 pontos por real"
+    "regra": "Até 4 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 2,
@@ -4535,12 +4535,12 @@
     "pet"
    ],
    "livelo": {
-    "pontosPorReal": 9,
+    "pontosPorReal": 2,
     "pontosBase": 2,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
+    "escopo": "loja toda",
+    "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/pet-love/PLV",
-    "regra": "Até 9 pontos por real"
+    "regra": "2 pontos por real"
    },
    "esfera": null
   },
@@ -5309,12 +5309,12 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 4,
+    "pontosPorReal": 2,
     "pontosBase": 1,
     "escopo": "loja toda",
     "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/seus-ingressos/SIN",
-    "regra": "4 pontos por real"
+    "regra": "2 pontos por real"
    },
    "esfera": null
   },
@@ -5419,20 +5419,20 @@
     "livros"
    ],
    "livelo": {
-    "pontosPorReal": 3,
-    "pontosBase": 1,
+    "pontosPorReal": 2,
+    "pontosBase": 2,
     "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
+    "promocao": false,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/shopee/PEE",
-    "regra": "Até 3 pontos por real"
+    "regra": "Até 2 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 5,
-    "pontosBase": 5,
+    "pontosPorReal": 1,
+    "pontosBase": 0.5,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "url": "https://www.esfera.com.vc/p/shopee/e000100697",
-    "regra": "Até Até 5 pontos a cada real"
+    "regra": "Até 1 pontos a cada real"
    }
   },
   {
@@ -5968,12 +5968,12 @@
     "regra": "1 ponto por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
+    "pontosPorReal": 4,
+    "pontosBase": 4,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": false,
     "url": "https://www.esfera.com.vc/p/vivara/e000100715",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 4 pontos a cada real"
    }
   },
   {
