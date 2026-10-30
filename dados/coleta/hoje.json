@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-10-30T16:55:42.246Z",
+ "coletadoEm": "2026-10-30T20:26:21.975Z",
  "data": "2026-10-30",
  "totais": {
   "livelo": 245,
@@ -1037,12 +1037,12 @@
     "infantil"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 5,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/carters/CTS",
-    "regra": "3 pontos por real"
+    "regra": "5 pontos por real"
    },
    "esfera": null
   },
@@ -5074,12 +5074,12 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 5,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/riachuelo/RCH",
-    "regra": "3 pontos por real"
+    "regra": "5 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -6297,8 +6297,8 @@
    "paridade": null,
    "bonusPercentual": 70,
    "bonusMinimo": 40,
-   "validaAte": "2026-10-30",
-   "campanha": "Válido das 10h do dia 28/10 às 23h59 do dia 30/10/26. 40% bônus para todos os clientes. 70% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
+   "validaAte": "2026-10-31",
+   "campanha": "Válido das 10h do dia 28/10 às 23h59 do dia 31/10/26. 40% bônus para todos os clientes. 70% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
