@@ -128,7 +128,10 @@ export function GraficoLoja({ slug, carregar = carregarDaApi }: { slug: string; 
               axisLine={false}
               minTickGap={40}
               tick={{ fill: cores.texto, fontSize: 11 }}
-              tickFormatter={(d: string) => `${MESES_CURTOS[Number(d.slice(5, 7)) - 1]}/${d.slice(2, 4)}`}
+              tickFormatter={(d: string) =>
+                // Até ~3 meses de dados: dia/mês; mais que isso: mês/ano
+                dadosPeriodo.length <= 95 ? `${d.slice(8, 10)}/${d.slice(5, 7)}` : `${MESES_CURTOS[Number(d.slice(5, 7)) - 1]}/${d.slice(2, 4)}`
+              }
             />
             <YAxis
               width={28}

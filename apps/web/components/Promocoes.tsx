@@ -14,9 +14,7 @@ export function Promocoes({ promocoes }: { promocoes: PromocaoDoDia[] }) {
             <li key={`${p.parceiro.id}-${p.programa}`}>
               <span className="nome">{p.parceiro.nome}</span>
               <NomePrograma programa={p.programa} />
-              <span className="normal" title="Pontuação normal">
-                {formatarPontos(p.base)}
-              </span>
+              <span className="normal">era {formatarPontos(p.base)}</span>
               <Valor pontos={p.pontos} destaque />
             </li>
           ))}
