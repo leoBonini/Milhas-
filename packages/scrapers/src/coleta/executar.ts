@@ -20,6 +20,8 @@ export interface OfertaPrograma {
   pontosBase: number | null;
   escopo: string;
   promocao: boolean;
+  /** Pontos por real para assinantes do Clube Livelo, quando maior que o normal */
+  pontosClube?: number | null;
   url: string | null;
   regra: string;
 }
@@ -50,6 +52,7 @@ const oferta = (p: ParceiroColetado): OfertaPrograma => ({
   pontosBase: p.pontosBase,
   escopo: p.escopo,
   promocao: p.promocao,
+  pontosClube: p.pontosClube ?? null,
   url: p.url,
   regra: p.regra,
 });
@@ -74,6 +77,34 @@ export function juntarProgramas(livelo: ParceiroColetado[], esfera: ParceiroCole
     l.categorias.sort((a, b) => ordem.indexOf(a) - ordem.indexOf(b));
   }
   return [...lojas.values()].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"));
+}
+
+/**
+ * A Esfera não diz o que é promoção: quando há campanha, o próprio valor padrão muda.
+ * Valor normal = o mais frequente nos 30 dias anteriores; acima disso é promoção.
+ * Vale também para a Livelo quando a API não traz a pontuação padrão.
+ */
+export function marcarPromocoes(lojas: LojaHoje[], hist: ArquivoHistorico, data: string): void {
+  const inicio = new Date(`${data}T12:00:00Z`);
+  inicio.setUTCDate(inicio.getUTCDate() - 30);
+  const desde = inicio.toISOString().slice(0, 10);
+  for (const l of lojas) {
+    for (const prog of ["livelo", "esfera"] as const) {
+      const o = l[prog];
+      const serie = hist[l.slug]?.[prog];
+      if (!o || !serie) continue;
+      const anteriores = Object.entries(serie).filter(([d]) => d >= desde && d < data).map(([, v]) => v);
+      if (anteriores.length < 5) continue; // pouco histórico: não dá para saber o normal
+      const freq = new Map<number, number>();
+      for (const v of anteriores) freq.set(v, (freq.get(v) ?? 0) + 1);
+      // Mais frequente; no empate, o menor (promoções são as exceções)
+      const normal = [...freq].sort((a, b) => b[1] - a[1] || a[0] - b[0])[0]![0];
+      if (prog === "esfera" || o.pontosBase == null || o.pontosBase >= o.pontosPorReal) {
+        o.pontosBase = Math.min(normal, o.pontosBase ?? normal);
+        if (o.pontosPorReal > o.pontosBase) o.promocao = true;
+      }
+    }
+  }
 }
 
 /** Atualiza o histórico com o máximo do dia (rodar várias vezes no dia não duplica). */
@@ -150,8 +181,10 @@ async function principal() {
 
   // Só grava se os dois programas vieram: não apaga dados bons com uma coleta quebrada
   if (livelo.length && esfera.length) {
+    const histAnterior = await lerJson<ArquivoHistorico>(path.join(PASTA, "historico.json"), {});
+    marcarPromocoes(lojas, histAnterior, data);
     await writeFile(path.join(PASTA, "hoje.json"), JSON.stringify(arquivo, null, 1) + "\n");
-    const hist = atualizarHistorico(await lerJson<ArquivoHistorico>(path.join(PASTA, "historico.json"), {}), lojas, data);
+    const hist = atualizarHistorico(histAnterior, lojas, data);
     await writeFile(path.join(PASTA, "historico.json"), JSON.stringify(hist) + "\n");
   }
 

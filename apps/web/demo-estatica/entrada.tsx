@@ -4,7 +4,8 @@ import { createRoot } from "react-dom/client";
 import { useEffect, useState, type FormEvent } from "react";
 import { encontrarCategoria, normalizarTermo, type Categoria, type LojaDoDia, type PalavraChave } from "@milhas/core";
 import { coletadoEm, fonteArquivo } from "@/lib/dados/arquivo";
-import { melhoresDoDia, ordenarLojas } from "@/lib/dados/comum";
+import { melhoresDoDia, ordenarLojas, promocoesDoDia } from "@/lib/dados/comum";
+import { Promocoes } from "@/components/Promocoes";
 import { montarRespostaHistorico } from "@/lib/historico";
 import { BarraCategorias, BotoesCategoria, CampoBusca, NomePrograma, Valor } from "@/components/Comuns";
 import { ListaLojas } from "@/components/ListaLojas";
@@ -47,6 +48,7 @@ function Inicio({ base }: { base: Base }) {
           ))}
         </ol>
       </div>
+      <Promocoes promocoes={promocoesDoDia(base.lojas, 10)} />
       <Link href="/transferencias" className="atalho">
         <span>
           Transferir para milhas

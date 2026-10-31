@@ -43,6 +43,7 @@ export function ListaLojas({
               <span className="nome">
                 <span className="seta" aria-hidden>▶</span>
                 {l.parceiro.nome}
+                {(l.ofertas?.livelo?.promocao || l.ofertas?.esfera?.promocao) && <span className="selo">promo</span>}
               </span>
               <Valor pontos={l.livelo} destaque={l.livelo != null && l.livelo === melhor} />
               <Valor pontos={l.esfera} destaque={l.esfera != null && l.esfera === melhor} />
@@ -73,6 +74,7 @@ function Ofertas({ loja }: { loja: LojaDoDia }) {
             {o.promocao && <span className="selo">promoção</span>}
           </span>
           <span className="regra">
+            {o.pontosBase && o.pontosBase < o.pontosPorReal ? `Normal: ${formatarPontos(o.pontosBase)} · ` : ""}
             {o.regra}
             {o.escopo === "por dólar" ? " · compras em dólar" : ""}
           </span>

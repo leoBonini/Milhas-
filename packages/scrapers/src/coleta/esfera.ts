@@ -51,6 +51,9 @@ const num = (v: unknown) => {
 export function normalizarItemEsfera(item: ItemEsfera, agora = new Date()): ParceiroColetado | null {
   if (!item.id || !item.displayName || item.active === false) return null;
 
+  // Regras que não são por valor gasto ("por carro assinado") não cabem em pontos por real
+  const regraExibida = item.externalInfo?.rule ?? "";
+  if (regraExibida && !/real|reais|d[oó]lar|compra|gast|fatura/i.test(regraExibida)) return null;
   const porDolar = /d[oó]lar/i.test(`${item.esf_accumulationFactorDescription ?? ""} ${item.externalInfo?.rule ?? ""}`);
 
   // Regra padrão: X pontos a cada Y reais
@@ -92,7 +95,7 @@ export function normalizarItemEsfera(item: ItemEsfera, agora = new Date()): Parc
     categoriasOriginais,
     url: item.route ? `https://www.esfera.com.vc${item.route}` : null,
     regra: [
-      item.esf_accumulationPrefix ? "Até" : null,
+      item.esf_accumulationPrefix && !/^\s*(at[eé]|de)\s/i.test(item.externalInfo?.amount ?? "") ? "Até" : null,
       item.externalInfo?.amount?.replace(/\bpts?\b/i, "pontos") ?? `${pontos ?? "?"} ${pontos === 1 ? "ponto" : "pontos"}`,
       item.externalInfo?.rule ?? (reais === 1 ? `por ${porDolar ? "dólar" : "real"}` : `a cada ${reais} ${porDolar ? "dólares" : "reais"}`),
     ]

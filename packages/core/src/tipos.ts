@@ -29,6 +29,7 @@ export interface OfertaDoDia {
   pontosBase: number | null;
   escopo: string;
   promocao: boolean;
+  pontosClube?: number | null;
   url: string | null;
   regra: string;
 }

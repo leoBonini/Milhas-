@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { dados, melhoresDoDia } from "@/lib/dados";
+import { dados, melhoresDoDia, promocoesDoDia } from "@/lib/dados";
+import { Promocoes } from "@/components/Promocoes";
 import { AvisoDemonstracao, BarraCategorias, CampoBusca, NomePrograma, Valor } from "@/components/Comuns";
 
 // Os dados mudam no máximo 3 vezes por dia (coleta agendada): página regenerada a cada 5 min
@@ -34,6 +35,8 @@ export default async function Inicio() {
           {!top.length && <li>Nenhuma pontuação coletada hoje ainda.</li>}
         </ol>
       </div>
+      <Promocoes promocoes={promocoesDoDia(lojas, 10)} />
+
       <Link href="/transferencias" className="atalho">
         <span>
           Transferir para milhas

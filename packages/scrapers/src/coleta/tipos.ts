@@ -13,6 +13,8 @@ export interface ParceiroColetado {
   /** Ex: "loja toda", "até (varia por produto)", "por dólar" */
   escopo: string;
   promocao: boolean;
+  /** Pontos por real para assinantes do clube do programa (Clube Livelo), quando maior */
+  pontosClube?: number | null;
   categorias: CategoriaAppId[];
   /** Ids/nomes de categoria como vieram do programa (para revisão do mapeamento) */
   categoriasOriginais: string[];

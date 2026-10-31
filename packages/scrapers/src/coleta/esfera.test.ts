@@ -71,3 +71,12 @@ test("utilitários", () => {
   assert.equal(lerDataEsfera("dd-mm-yyyy HH:MM"), null);
   assert.equal(lerDataEsfera("15-07-2025 23:00")?.toISOString(), "2025-07-16T02:00:00.000Z");
 });
+
+test("regra por carro assinado não entra; sem 'Até Até'", () => {
+  assert.equal(
+    normalizarItemEsfera({ id: "e7", displayName: "Localiza Meoo", esf_accumulationValue: "30000", externalInfo: { amount: "Até 30.000 pts", rule: "por carro assinado" } }),
+    null,
+  );
+  const p = normalizarItemEsfera({ id: "e8", displayName: "Mistral", esf_accumulationValue: "10", esf_accumulationPrefix: "Até", externalInfo: { amount: "Até 10 pts", rule: "a cada real" } })!;
+  assert.equal(p.regra, "Até 10 pontos a cada real");
+});

@@ -44,6 +44,7 @@ export function normalizarParidadeLivelo(p: ParidadeLivelo, info: InfoParceiroLi
     pontosBase: p.parityBau != null ? arred(p.parityBau / divisor) : null,
     escopo: porDolar ? "por dólar" : ate ? "até (varia por produto ou categoria)" : "loja toda",
     promocao: !!p.promotion,
+    pontosClube: p.parityClub && p.parityClub > pontos ? arred(p.parityClub / divisor) : null,
     categorias: [],
     categoriasOriginais: info.categorias,
     url: `https://www.livelo.com.br/juntar-pontos/parceiros/${info.slug}/${p.partnerCode}`,
