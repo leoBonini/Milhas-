@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-03T18:12:08.275Z",
+ "coletadoEm": "2026-11-03T21:30:29.967Z",
  "data": "2026-11-03",
  "totais": {
   "livelo": 244,
@@ -4312,13 +4312,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 4,
+    "pontosPorReal": 5,
     "pontosBase": 2,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/movida/MOV",
-    "regra": "4 pontos por real"
+    "regra": "5 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 2,
