@@ -1,6 +1,6 @@
 {
- "coletadoEm": "2026-11-07T01:29:08.067Z",
- "data": "2026-11-06",
+ "coletadoEm": "2026-11-07T16:43:14.050Z",
+ "data": "2026-11-07",
  "totais": {
   "livelo": 245,
   "esfera": 155,
@@ -65,13 +65,13 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/adcos/SPA",
-    "regra": "5 pontos por real"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -1752,13 +1752,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 4,
+    "pontosPorReal": 1,
     "pontosBase": 1,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
-    "pontosClube": 6,
+    "escopo": "loja toda",
+    "promocao": false,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/divvino/AGN",
-    "regra": "Até 4 pontos por real · Clube Livelo: 6"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -2041,13 +2041,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/elbo/ELB",
-    "regra": "5 pontos por real"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -3794,13 +3794,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 2,
     "pontosBase": 2,
-    "escopo": "loja toda",
-    "promocao": true,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/magalu/MZL",
-    "regra": "3 pontos por real"
+    "regra": "Até 2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -5187,22 +5187,22 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 2,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/renner/RNN",
-    "regra": "8 pontos por real"
+    "regra": "2 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 10,
+    "pontosPorReal": 2,
     "pontosBase": 2,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/renner/e000100180",
-    "regra": "Até 10 pontos a cada real"
+    "regra": "Até 2 pontos a cada real"
    }
   },
   {
@@ -6119,13 +6119,13 @@
     "esporte"
    ],
    "livelo": {
-    "pontosPorReal": 7,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
-    "pontosClube": 10,
+    "promocao": false,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/under-armour/VCA",
-    "regra": "7 pontos por real · Clube Livelo: 10"
+    "regra": "1 ponto por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -6565,10 +6565,10 @@
    "programa": "livelo",
    "destino": "Azul Fidelidade",
    "paridade": null,
-   "bonusPercentual": 130,
-   "bonusMinimo": 60,
-   "validaAte": "2026-11-06",
-   "campanha": "Válida das 09h do dia 03/11 às 23h59 de 06/11/26. 60% de bônus para todos clientes; 90% de bônus para clientes Clube Livelo ou Clube Azul; 100% de bônus para clientes Clube Livelo e Clube Azul; 105% de bônus para clientes Clube Azul com mais de 6 e menos de 12 meses de assinatura; 110% de bônus para clientes Clube Azul com 12 a 35 meses de assinatura; 120% de bônus para clientes Clube Azul com 36 a 59 meses de assinatura; 130% de bônus para clientes Clube Azul com mais de 60 meses de assinatura.",
+   "bonusPercentual": 0,
+   "bonusMinimo": 0,
+   "validaAte": null,
+   "campanha": null,
    "url": "https://www.livelo.com.br/livelo-para-parceiros/azul/AZLTransfer"
   }
  ]
