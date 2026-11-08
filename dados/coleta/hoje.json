@@ -1,6 +1,6 @@
 {
- "coletadoEm": "2026-11-08T00:59:18.386Z",
- "data": "2026-11-07",
+ "coletadoEm": "2026-11-08T16:54:03.251Z",
+ "data": "2026-11-08",
  "totais": {
   "livelo": 245,
   "esfera": 155,
@@ -1666,13 +1666,13 @@
     "regra": "8 pontos por dólar"
    },
    "esfera": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/decolar/e000100402",
-    "regra": "Até 8 pontos a cada real"
+    "regra": "Até 1 pontos a cada real"
    }
   },
   {
@@ -3504,13 +3504,13 @@
     "regra": "Até 6 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 6,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/live/e000101020",
-    "regra": "1 pontos a cada real"
+    "regra": "6 pontos a cada real"
    }
   },
   {
