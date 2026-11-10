@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-10T03:54:51.917Z",
+ "coletadoEm": "2026-11-10T18:25:25.767Z",
  "data": "2026-11-10",
  "totais": {
   "livelo": 245,
@@ -1261,13 +1261,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 12,
-    "pontosBase": 12,
+    "pontosPorReal": 10,
+    "pontosBase": 8,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 11,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/ciclic/CIC",
-    "regra": "12 pontos por real"
+    "regra": "10 pontos por real · Clube Livelo: 11"
    },
    "esfera": null
   },
@@ -1329,13 +1329,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 10,
     "pontosBase": 8,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 11,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/clube-bancorbras/BCR",
-    "regra": "8 pontos por real"
+    "regra": "10 pontos por real · Clube Livelo: 11"
    },
    "esfera": null
   },
