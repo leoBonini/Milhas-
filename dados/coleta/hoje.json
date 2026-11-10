@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-10T18:25:25.767Z",
+ "coletadoEm": "2026-11-10T21:40:04.469Z",
  "data": "2026-11-10",
  "totais": {
   "livelo": 245,
@@ -65,13 +65,13 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 10,
     "pontosBase": 1,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": 11,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/adcos/SPA",
-    "regra": "8 pontos por real · Clube Livelo: 11"
+    "regra": "10 pontos por real · Clube Livelo: 11"
    },
    "esfera": null
   },
@@ -3581,11 +3581,11 @@
    "livelo": {
     "pontosPorReal": 15,
     "pontosBase": 5,
-    "escopo": "loja toda",
+    "escopo": "por dólar",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/localiza-internacional/LCI",
-    "regra": "15 pontos por real"
+    "regra": "15 pontos por dólar"
    },
    "esfera": null
   },
