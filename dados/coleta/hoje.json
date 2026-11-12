@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-11T22:29:35.265Z",
+ "coletadoEm": "2026-11-12T02:38:29.652Z",
  "data": "2026-11-11",
  "totais": {
   "livelo": 245,
@@ -2136,13 +2136,13 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 4,
+    "pontosPorReal": 2,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/epoca-cosmeticos/EPC",
-    "regra": "4 pontos por real"
+    "regra": "2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 2,
@@ -3112,13 +3112,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
-    "pontosClube": 10,
+    "promocao": false,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/klabin/KLB",
-    "regra": "8 pontos por real · Clube Livelo: 10"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -5664,13 +5664,13 @@
     "livros"
    ],
    "livelo": {
-    "pontosPorReal": 3,
-    "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": true,
+    "pontosPorReal": 2,
+    "pontosBase": 2,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/shopee/PEE",
-    "regra": "3 pontos por real"
+    "regra": "Até 2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 5,
