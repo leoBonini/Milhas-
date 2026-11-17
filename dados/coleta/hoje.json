@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-17T04:16:12.144Z",
+ "coletadoEm": "2026-11-17T19:31:06.863Z",
  "data": "2026-11-17",
  "totais": {
   "livelo": 243,
@@ -1649,13 +1649,13 @@
     "regra": "25 pontos por dólar"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 4,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/decolar/e000100402",
-    "regra": "Até 1 a cada real"
+    "regra": "De 2 a 4 pontos a cada real"
    }
   },
   {
@@ -2084,13 +2084,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/emma/e000100699",
-    "regra": "Até 5 pontos a cada real"
+    "regra": "Até 1 pontos a cada real"
    }
   },
   {
@@ -4357,13 +4357,13 @@
     "regra": "2 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 6,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/netshoes/e000100260",
-    "regra": "3 pontos a cada real"
+    "regra": "6 pontos a cada real"
    }
   },
   {
@@ -4704,13 +4704,13 @@
     "pet"
    ],
    "livelo": {
-    "pontosPorReal": 7,
+    "pontosPorReal": 10,
     "pontosBase": 2,
     "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/pet-love/PLV",
-    "regra": "Até 7 pontos por real"
+    "regra": "Até 10 pontos por real"
    },
    "esfera": null
   },
@@ -5177,13 +5177,13 @@
     "regra": "12 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 10,
     "pontosBase": 2,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/renner/e000100180",
-    "regra": "Até 2 pontos a cada real"
+    "regra": "Até 10 pontos a cada real"
    }
   },
   {
@@ -5270,13 +5270,13 @@
     "regra": "3 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 4,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/riachuelo/e000100281",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 4 pontos a cada real"
    }
   },
   {
@@ -6520,10 +6520,10 @@
    "programa": "livelo",
    "destino": "Smiles",
    "paridade": null,
-   "bonusPercentual": 0,
-   "bonusMinimo": 0,
-   "validaAte": null,
-   "campanha": null,
+   "bonusPercentual": 80,
+   "bonusMinimo": 40,
+   "validaAte": "2026-11-17",
+   "campanha": "Válido das 10h às 23h59 do dia 17/11/2026. 40% bônus para todos os clientes. 80% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
