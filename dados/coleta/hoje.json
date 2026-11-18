@@ -1,6 +1,6 @@
 {
- "coletadoEm": "2026-11-17T23:21:20.556Z",
- "data": "2026-11-17",
+ "coletadoEm": "2026-11-18T03:16:07.327Z",
+ "data": "2026-11-18",
  "totais": {
   "livelo": 243,
   "esfera": 154,
@@ -100,13 +100,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 3,
     "pontosBase": 2,
-    "escopo": "loja toda",
-    "promocao": false,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/cruzeiros-agaxtur/AGX",
-    "regra": "2 pontos por real"
+    "regra": "Até 3 pontos por real"
    },
    "esfera": null
   },
@@ -267,13 +267,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 6,
     "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
+    "pontosClube": 8,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/angeloni/AGE",
-    "regra": "1 ponto por real"
+    "regra": "Até 6 pontos por real · Clube Livelo: 8"
    },
    "esfera": null
   },
@@ -380,13 +380,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 13,
+    "pontosPorReal": 14,
     "pontosBase": 12,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/assist-card-seguros/ASC",
-    "regra": "13 pontos por real"
+    "regra": "14 pontos por real"
    },
    "esfera": null
   },
@@ -433,13 +433,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 10,
     "pontosBase": 5,
-    "escopo": "por dólar",
-    "promocao": false,
-    "pontosClube": null,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
+    "pontosClube": 15,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/avis/VNT",
-    "regra": "5 pontos por dólar"
+    "regra": "Até 10 pontos por real · Clube Livelo: 15"
    },
    "esfera": null
   },
@@ -545,13 +545,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 6,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/beach-park/BPK",
-    "regra": "2 pontos por real"
+    "regra": "6 pontos por real"
    },
    "esfera": null
   },
@@ -562,13 +562,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 5,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/beach-park/BHP",
-    "regra": "1 ponto por real"
+    "regra": "5 pontos por real"
    },
    "esfera": null
   },
@@ -596,13 +596,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 10,
     "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/beep/BEP",
-    "regra": "1 ponto por real"
+    "regra": "Até 10 pontos por real"
    },
    "esfera": null
   },
@@ -638,13 +638,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 5,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/beto-carrero/JBW",
-    "regra": "2 pontos por real"
+    "regra": "5 pontos por real"
    },
    "esfera": null
   },
@@ -878,13 +878,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 10,
     "pontosBase": 5,
-    "escopo": "por dólar",
-    "promocao": false,
-    "pontosClube": null,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
+    "pontosClube": 15,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/budget/VBU",
-    "regra": "5 pontos por dólar"
+    "regra": "Até 10 pontos por real · Clube Livelo: 15"
    },
    "esfera": null
   },
@@ -914,13 +914,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 4,
     "pontosBase": 2,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": false,
+    "escopo": "loja toda",
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/buser/BSR",
-    "regra": "Até 2 pontos por real"
+    "regra": "4 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 0.5,
@@ -1036,13 +1036,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 8,
     "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/carrefour/CRM",
-    "regra": "1 ponto por real"
+    "regra": "Até 8 pontos por real"
    },
    "esfera": null
   },
@@ -1088,13 +1088,13 @@
     "infantil"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 6,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/carters/CTS",
-    "regra": "3 pontos por real"
+    "regra": "6 pontos por real"
    },
    "esfera": null
   },
@@ -1123,13 +1123,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 7,
+    "pontosPorReal": 6,
     "pontosBase": 2,
-    "escopo": "loja toda",
+    "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
-    "pontosClube": null,
+    "pontosClube": 8,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/cea/CEA",
-    "regra": "7 pontos por real"
+    "regra": "Até 6 pontos por real · Clube Livelo: 8"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -1149,13 +1149,13 @@
     "esporte"
    ],
    "livelo": {
-    "pontosPorReal": 11,
+    "pontosPorReal": 2,
     "pontosBase": 2,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
+    "escopo": "loja toda",
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/centauro/CEN",
-    "regra": "Até 11 pontos por real"
+    "regra": "2 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -1227,13 +1227,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 4,
     "pontosBase": 4,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/ciclic-celular/CEL",
-    "regra": "5 pontos por real"
+    "regra": "4 pontos por real"
    },
    "esfera": null
   },
@@ -1244,13 +1244,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 14,
+    "pontosPorReal": 16,
     "pontosBase": 12,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/ciclic/CIC",
-    "regra": "14 pontos por real"
+    "regra": "16 pontos por real"
    },
    "esfera": null
   },
@@ -1261,13 +1261,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 3,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/civitatis/CIV",
-    "regra": "1 ponto por real"
+    "regra": "3 pontos por real"
    },
    "esfera": null
   },
@@ -1312,13 +1312,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 25,
     "pontosBase": 8,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 28,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/clube-bancorbras/BCR",
-    "regra": "8 pontos por real"
+    "regra": "25 pontos por real · Clube Livelo: 28"
    },
    "esfera": null
   },
@@ -1381,13 +1381,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 4,
     "pontosBase": 2,
     "escopo": "loja toda",
     "promocao": true,
-    "pontosClube": null,
+    "pontosClube": 5,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/colcci/GAM",
-    "regra": "3 pontos por real"
+    "regra": "4 pontos por real · Clube Livelo: 5"
    },
    "esfera": null
   },
@@ -1519,13 +1519,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 12,
     "pontosBase": 5,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/coris/CRS",
-    "regra": "5 pontos por real"
+    "regra": "12 pontos por real"
    },
    "esfera": null
   },
@@ -1640,13 +1640,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 25,
+    "pontosPorReal": 30,
     "pontosBase": 6,
     "escopo": "por dólar",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/decolar/DCR",
-    "regra": "25 pontos por dólar"
+    "regra": "30 pontos por dólar"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -1682,13 +1682,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 4,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 7,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/democrata/DMC",
-    "regra": "2 pontos por real"
+    "regra": "4 pontos por real · Clube Livelo: 7"
    },
    "esfera": null
   },
@@ -1716,13 +1716,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 4,
+    "pontosPorReal": 1,
     "pontosBase": 1,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
-    "pontosClube": 6,
+    "escopo": "loja toda",
+    "promocao": false,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/divvino/AGN",
-    "regra": "Até 4 pontos por real · Clube Livelo: 6"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -2146,10 +2146,10 @@
     "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 4,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/estapar/EST",
-    "regra": "1 ponto por real"
+    "regra": "1 ponto por real · Clube Livelo: 4"
    },
    "esfera": null
   },
@@ -2416,13 +2416,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 5,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 6,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/foco/FOC",
-    "regra": "2 pontos por real"
+    "regra": "5 pontos por real · Clube Livelo: 6"
    },
    "esfera": null
   },
@@ -2433,13 +2433,13 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 4,
     "pontosBase": 2,
     "escopo": "loja toda",
     "promocao": true,
-    "pontosClube": null,
+    "pontosClube": 5,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/forever-liss/LSS",
-    "regra": "3 pontos por real"
+    "regra": "4 pontos por real · Clube Livelo: 5"
    },
    "esfera": null
   },
@@ -2658,13 +2658,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 6,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/hering/HRG",
-    "regra": "3 pontos por real"
+    "regra": "6 pontos por real"
    },
    "esfera": null
   },
@@ -2726,13 +2726,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 6,
+    "pontosPorReal": 10,
     "pontosBase": 6,
     "escopo": "por dólar",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/hertz-internacional/SGV",
-    "regra": "6 pontos por dólar"
+    "regra": "10 pontos por dólar"
    },
    "esfera": null
   },
@@ -2811,13 +2811,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 2,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/horas-magicas/HMG",
-    "regra": "1 ponto por real"
+    "regra": "2 pontos por real"
    },
    "esfera": null
   },
@@ -2846,13 +2846,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 4,
     "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": true,
+    "pontosClube": 6,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/hoteis/HTC",
-    "regra": "1 ponto por real"
+    "regra": "Até 4 pontos por real · Clube Livelo: 6"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -2909,10 +2909,10 @@
     "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 2,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/imaginarium/IMG",
-    "regra": "1 ponto por real"
+    "regra": "1 ponto por real · Clube Livelo: 2"
    },
    "esfera": null
   },
@@ -2958,13 +2958,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 13,
     "pontosBase": 1,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/insider-store/INS",
-    "regra": "5 pontos por real"
+    "regra": "13 pontos por real"
    },
    "esfera": null
   },
@@ -3369,13 +3369,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 3,
-    "pontosBase": 3,
+    "pontosPorReal": 10,
+    "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/liga-vitoria-viagem/LSG",
-    "regra": "3 pontos por real"
+    "regra": "10 pontos por real"
    },
    "esfera": null
   },
@@ -3472,13 +3472,13 @@
     "esporte"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 8,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/live-oficial/LVE",
-    "regra": "1 ponto por real"
+    "regra": "8 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4045,13 +4045,13 @@
     "esporte"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 5,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 10,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/mizuno/VMZ",
-    "regra": "1 ponto por real"
+    "regra": "5 pontos por real · Clube Livelo: 10"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4138,13 +4138,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 3,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 5,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/montecarlo/MCV",
-    "regra": "2 pontos por real"
+    "regra": "3 pontos por real · Clube Livelo: 5"
    },
    "esfera": {
     "pontosPorReal": 3,
@@ -4478,13 +4478,13 @@
     "saude"
    ],
    "livelo": {
-    "pontosPorReal": 10,
+    "pontosPorReal": 6,
     "pontosBase": 3,
     "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/o-boticario/BOT",
-    "regra": "Até 10 pontos por real"
+    "regra": "Até 6 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4923,13 +4923,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 10,
+    "pontosPorReal": 25,
     "pontosBase": 10,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": false,
+    "escopo": "loja toda",
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/portoseguro/POT",
-    "regra": "Até 10 pontos por real"
+    "regra": "25 pontos por real"
    },
    "esfera": null
   },
@@ -5044,13 +5044,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 2,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 3,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/puket/PKT",
-    "regra": "1 ponto por real"
+    "regra": "2 pontos por real · Clube Livelo: 3"
    },
    "esfera": null
   },
@@ -5134,13 +5134,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 5,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/quero-passagem/QPV",
-    "regra": "1 ponto por real"
+    "regra": "5 pontos por real"
    },
    "esfera": null
   },
@@ -5194,13 +5194,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 15,
     "pontosBase": 5,
     "escopo": "por dólar",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/rentcars/RTC",
-    "regra": "5 pontos por dólar"
+    "regra": "15 pontos por dólar"
    },
    "esfera": {
     "pontosPorReal": 15,
@@ -5261,13 +5261,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 6,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/riachuelo/RCH",
-    "regra": "3 pontos por real"
+    "regra": "6 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -5338,13 +5338,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 3,
+    "pontosPorReal": 1,
     "pontosBase": 1,
-    "escopo": "loja toda",
-    "promocao": true,
+    "escopo": "até (varia por produto ou categoria)",
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/sams-club-e-commerce/ECO",
-    "regra": "3 pontos por real"
+    "regra": "Até 1 ponto por real"
    },
    "esfera": null
   },
@@ -5477,13 +5477,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 10,
-    "pontosBase": 10,
+    "pontosPorReal": 20,
+    "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/seguro-viagem-bradesco/BVP",
-    "regra": "10 pontos por real"
+    "regra": "20 pontos por real"
    },
    "esfera": null
   },
@@ -5494,13 +5494,13 @@
     "beleza"
    ],
    "livelo": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/sephora/SPR",
-    "regra": "8 pontos por real"
+    "regra": "1 ponto por real"
    },
    "esfera": null
   },
@@ -5791,13 +5791,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 12,
+    "pontosPorReal": 16,
     "pontosBase": 10,
     "escopo": "loja toda",
     "promocao": true,
-    "pontosClube": 14,
+    "pontosClube": 20,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/sulamerica-seguro-viagem/SUL",
-    "regra": "12 pontos por real · Clube Livelo: 14"
+    "regra": "16 pontos por real · Clube Livelo: 20"
    },
    "esfera": null
   },
@@ -5808,13 +5808,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 4,
     "pontosBase": 2,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/summerville/PPH",
-    "regra": "2 pontos por real"
+    "regra": "4 pontos por real"
    },
    "esfera": null
   },
@@ -5859,13 +5859,13 @@
     "casa"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 3,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 4,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/telhanorte/TLN",
-    "regra": "1 ponto por real"
+    "regra": "3 pontos por real · Clube Livelo: 4"
    },
    "esfera": null
   },
@@ -5913,13 +5913,13 @@
     "viagem"
    ],
    "livelo": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 3,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
-    "pontosClube": null,
+    "promocao": true,
+    "pontosClube": 4,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/thule/THL",
-    "regra": "1 ponto por real"
+    "regra": "3 pontos por real · Clube Livelo: 4"
    },
    "esfera": null
   },
@@ -5930,13 +5930,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 12,
+    "pontosPorReal": 3,
     "pontosBase": 3,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/tia-sonia/AMT",
-    "regra": "12 pontos por real"
+    "regra": "3 pontos por real"
    },
    "esfera": null
   },
@@ -5964,13 +5964,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 10,
+    "pontosPorReal": 12,
     "pontosBase": 10,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/tokio-marine/TOM",
-    "regra": "10 pontos por real"
+    "regra": "12 pontos por real"
    },
    "esfera": null
   },
@@ -6152,13 +6152,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 11,
+    "pontosPorReal": 12,
     "pontosBase": 6,
     "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/universal-assistance/AST",
-    "regra": "11 pontos por real"
+    "regra": "12 pontos por real"
    },
    "esfera": null
   },
@@ -6522,8 +6522,8 @@
    "paridade": null,
    "bonusPercentual": 80,
    "bonusMinimo": 40,
-   "validaAte": "2026-11-17",
-   "campanha": "Válido das 10h às 23h59 do dia 17/11/2026. 40% bônus para todos os clientes. 80% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
+   "validaAte": "2026-11-18",
+   "campanha": "Válido das 10h do dia 17/11 às 23h59 do dia 18/11/2026. 40% bônus para todos os clientes. 80% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus.",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
