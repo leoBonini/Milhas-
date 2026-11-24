@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-24T05:42:11.032Z",
+ "coletadoEm": "2026-11-24T20:58:33.608Z",
  "data": "2026-11-24",
  "totais": {
   "livelo": 244,
@@ -84,13 +84,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 1,
+    "pontosPorReal": 3,
+    "pontosBase": 3,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": false,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/adidas/e000100725",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 3 pontos a cada real"
    }
   },
   {
@@ -743,11 +743,11 @@
    "livelo": {
     "pontosPorReal": 4,
     "pontosBase": 4,
-    "escopo": "loja toda",
+    "escopo": "por dólar",
     "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/booking/BOK",
-    "regra": "4 pontos por real"
+    "regra": "4 pontos por dólar"
    },
    "esfera": {
     "pontosPorReal": 4,
@@ -1649,13 +1649,13 @@
     "regra": "4 pontos por dólar"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 4,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/decolar/e000100402",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 4 pontos a cada real"
    }
   },
   {
@@ -1763,13 +1763,13 @@
     "regra": "1 ponto por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 4,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/x/e000100755",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 4 pontos a cada real"
    }
   },
   {
@@ -4863,13 +4863,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 3,
-    "pontosBase": 3,
+    "pontosPorReal": 6,
+    "pontosBase": 5,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/polishop/e000100264",
-    "regra": "Até 3 pontos a cada real"
+    "regra": "Até 6 pontos a cada real"
    }
   },
   {
