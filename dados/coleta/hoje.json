@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-23T22:24:08.995Z",
+ "coletadoEm": "2026-11-24T02:45:14.735Z",
  "data": "2026-11-23",
  "totais": {
   "livelo": 244,
@@ -84,13 +84,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 5,
+    "pontosPorReal": 3,
     "pontosBase": 3,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/adidas/e000100725",
-    "regra": "Até 5 pontos a cada real"
+    "regra": "Até 3 pontos a cada real"
    }
   },
   {
@@ -622,13 +622,13 @@
     "regra": "Até 8 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 6,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/beleza-na-web/e000100477",
-    "regra": "1 pontos a cada real"
+    "regra": "6 pontos a cada real"
    }
   },
   {
@@ -4863,13 +4863,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 8,
+    "pontosPorReal": 6,
     "pontosBase": 5,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/polishop/e000100264",
-    "regra": "Até 8 pontos a cada real"
+    "regra": "Até 6 pontos a cada real"
    }
   },
   {
@@ -5278,13 +5278,13 @@
     "regra": "3 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 6,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/riachuelo/e000100281",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 6 pontos a cada real"
    }
   },
   {
