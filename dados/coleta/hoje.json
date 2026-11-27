@@ -1,5 +1,5 @@
 {
- "coletadoEm": "2026-11-27T03:53:48.218Z",
+ "coletadoEm": "2026-11-27T19:46:29.149Z",
  "data": "2026-11-27",
  "totais": {
   "livelo": 241,
@@ -190,13 +190,13 @@
     "servicos"
    ],
    "livelo": {
-    "pontosPorReal": 18,
+    "pontosPorReal": 4,
     "pontosBase": 4,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/allianz/ALZ",
-    "regra": "18 pontos por real"
+    "regra": "4 pontos por real"
    },
    "esfera": null
   },
@@ -2024,13 +2024,13 @@
     "casa"
    ],
    "livelo": {
-    "pontosPorReal": 6,
+    "pontosPorReal": 1,
     "pontosBase": 1,
     "escopo": "loja toda",
-    "promocao": true,
+    "promocao": false,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/electrolux/ELX",
-    "regra": "6 pontos por real"
+    "regra": "1 ponto por real"
    },
    "esfera": {
     "pontosPorReal": 0.5,
@@ -2291,13 +2291,13 @@
     "saude"
    ],
    "livelo": {
-    "pontosPorReal": 12,
+    "pontosPorReal": 9,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
-    "pontosClube": 15,
+    "pontosClube": 11,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/farmacias-app/NCC",
-    "regra": "Até 12 pontos por real · Clube Livelo: 15"
+    "regra": "Até 9 pontos por real · Clube Livelo: 11"
    },
    "esfera": null
   },
@@ -2958,13 +2958,13 @@
     "moda"
    ],
    "livelo": {
-    "pontosPorReal": 21,
+    "pontosPorReal": 12,
     "pontosBase": 1,
-    "escopo": "até (varia por produto ou categoria)",
+    "escopo": "loja toda",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/insider-store/INS",
-    "regra": "Até 21 pontos por real"
+    "regra": "12 pontos por real"
    },
    "esfera": null
   },
@@ -3243,13 +3243,13 @@
     "regra": "4 pontos por real · Clube Livelo: 5"
    },
    "esfera": {
-    "pontosPorReal": 1,
+    "pontosPorReal": 3,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/lacoste/e000100721",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 3 pontos a cada real"
    }
   },
   {
@@ -3809,13 +3809,13 @@
     "mercado"
    ],
    "livelo": {
-    "pontosPorReal": 10,
+    "pontosPorReal": 4,
     "pontosBase": 2,
     "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/magalu/MZL",
-    "regra": "Até 10 pontos por real"
+    "regra": "Até 4 pontos por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4538,13 +4538,13 @@
     "esporte"
    ],
    "livelo": {
-    "pontosPorReal": 7,
+    "pontosPorReal": 1,
     "pontosBase": 1,
-    "escopo": "até (varia por produto ou categoria)",
-    "promocao": true,
-    "pontosClube": 15,
+    "escopo": "loja toda",
+    "promocao": false,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/olympikus/OVC",
-    "regra": "Até 7 pontos por real · Clube Livelo: 15"
+    "regra": "1 ponto por real"
    },
    "esfera": {
     "pontosPorReal": 1,
@@ -4803,13 +4803,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 6,
-    "pontosBase": 6,
+    "pontosPorReal": 40,
+    "pontosBase": 30,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/petlove-saude/e000100360",
-    "regra": "Até 6 pontos a cada real"
+    "regra": "Até 40 pontos a cada real"
    }
   },
   {
@@ -4819,13 +4819,13 @@
     "outros"
    ],
    "livelo": {
-    "pontosPorReal": 2,
+    "pontosPorReal": 4,
     "pontosBase": 1,
     "escopo": "até (varia por produto ou categoria)",
     "promocao": true,
-    "pontosClube": 3,
+    "pontosClube": null,
     "url": "https://www.livelo.com.br/juntar-pontos/parceiros/pneu-store/CPX",
-    "regra": "Até 2 pontos por real · Clube Livelo: 3"
+    "regra": "Até 4 pontos por real"
    },
    "esfera": null
   },
@@ -4838,13 +4838,13 @@
    ],
    "livelo": null,
    "esfera": {
-    "pontosPorReal": 3,
-    "pontosBase": 3,
+    "pontosPorReal": 8,
+    "pontosBase": 5,
     "escopo": "até (varia por produto ou cliente)",
-    "promocao": false,
+    "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/polishop/e000100264",
-    "regra": "Até 3 pontos a cada real"
+    "regra": "Até 8 pontos a cada real"
    }
   },
   {
@@ -5611,13 +5611,13 @@
     "regra": "Até 3 pontos por real"
    },
    "esfera": {
-    "pontosPorReal": 1,
-    "pontosBase": 0.5,
+    "pontosPorReal": 5,
+    "pontosBase": 1,
     "escopo": "até (varia por produto ou cliente)",
     "promocao": true,
     "pontosClube": null,
     "url": "https://www.esfera.com.vc/p/shopee/e000100697",
-    "regra": "Até 1 pontos a cada real"
+    "regra": "Até 5 pontos a cada real"
    }
   },
   {
@@ -6494,10 +6494,10 @@
    "programa": "livelo",
    "destino": "Smiles",
    "paridade": null,
-   "bonusPercentual": 0,
-   "bonusMinimo": 0,
-   "validaAte": null,
-   "campanha": null,
+   "bonusPercentual": 80,
+   "bonusMinimo": 40,
+   "validaAte": "2026-11-30",
+   "campanha": "Válido das 10h do dia 27/11 até às 23h59 do dia 30/11/2026. 40% bônus para todos os clientes. 80% de bônus para Assinantes do Clube Smiles, Cliente Diamante ou Magno. O bônus da promoção é limitado a 300. 000 milhas bônus por CPF e Conta Família. Pontos creditados até 10 dias úteis após a transferência. Bônus válidos por 12 meses. * Obrigatório o cadastro na promoção para recebimento das milhas bônus. + Voucher de 79% OFF para compra de milhas Smiles para participantes assinantes do Clube Smiles",
    "url": "https://www.livelo.com.br/livelo-para-parceiros/smiles/SMLTransfer"
   },
   {
